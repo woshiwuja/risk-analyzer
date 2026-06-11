@@ -1,0 +1,3025 @@
+[
+ {
+  "id": "FSA-CCSC 1A",
+  "section": "CCSC",
+  "name": "Support of essential functions - account lock out",
+  "description": "I componenti del sistema devono rispettare i vincoli specifici descritti nella clausola 4 della norma IEC 62443-3-3 [11].\n\n(A titolo di riferimento, i punti specifici della clausola 4 della norma IEC 62443-3-3 sono riportati di seguito in questa colonna, per le righe da FSA-CCSC 1A a 1H, con il primo punto che segue in questa cella.)\n\nI controlli di accesso (IAC e UC) non devono impedire il funzionamento delle funzioni essenziali, in particolare:\n\n- Gli account utilizzati per le funzioni essenziali non devono essere bloccati, nemmeno temporaneamente (vedere 5.5, SR 1.3 – Gestione account, 5.6, SR 1.4 – Gestione identificativi, 5.13, SR 1.11 – Tentativi di accesso non riusciti e 6.7, SR 2.5 – Blocco sessione).",
+  "validation": "Si noti che, nell'ambito della documentazione per la certificazione, il fornitore avrà identificato le funzioni essenziali del componente in conformità alla definizione riportata nella norma IEC 62443-4-2. Verificare nella documentazione di progettazione che gli account utilizzati per le funzioni essenziali non vengano bloccati, nemmeno temporaneamente. Verificare tramite test che gli account utilizzati per le funzioni essenziali non vengano bloccati a causa di azioni di gestione degli account e funzioni di blocco implementate per soddisfare il requisito FR 1.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nc. Non pertinente - nessuna funzione essenziale",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 1B",
+  "section": "CCSC",
+  "name": "Support of essential functions - non-repudiation",
+  "description": "I controlli di accesso (IAC e UC) non devono impedire il funzionamento delle funzioni essenziali, in particolare:\n- La verifica e la registrazione delle azioni dell'operatore per garantire la non ripudiabilità non devono aggiungere ritardi significativi al tempo di risposta del sistema (vedere 6.14, SR 2.12 – Non ripudiabilità).",
+  "validation": "Verificare che il fornitore abbia eseguito e documentato analisi e test per confermare che la verifica e la registrazione delle azioni dell'operatore per garantire la non ripudiabilità non aggiungano ritardi significativi al tempo di risposta del sistema (vedere FSA-CR 2.12 – Non ripudiabilità).\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nc. Non pertinente - nessuna funzione essenziale",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 1C",
+  "section": "CCSC",
+  "name": "Support of essential functions - failure of certificate authority",
+  "description": "I controlli di accesso (IAC e UC) non devono impedire il funzionamento delle funzioni essenziali, in particolare:\n- Per i sistemi di controllo ad alta disponibilità, il guasto dell'autorità di certificazione non deve interrompere le funzioni essenziali (vedere 5.10, SR 1.8 – Certificati dell'infrastruttura a chiave pubblica (PKI)).",
+  "validation": "Se il componente utilizza l'autenticazione a chiave pubblica, verificare, chiedendo al fornitore, se si tratta di un componente ad alta disponibilità.\n\nSe il componente utilizza l'autenticazione a chiave pubblica e il fornitore dichiara che si tratta di un componente ad alta disponibilità, verificare che il fornitore disponga di un caso di test per confermare che il componente mantenga le sue funzioni essenziali in caso di guasto dell'autorità di certificazione. Verificare che questo test sia stato superato (vedere FSA-CR 1.8 – Certificati di infrastruttura a chiave pubblica (PKI)). \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non utilizza l'autenticazione a chiave pubblica, registrare:\nc. Non pertinente - autenticazione a chiave pubblica non utilizzata\nSe l'autenticazione a chiave pubblica viene utilizzata ma il fornitore non dichiara che si tratta di un componente ad alta disponibilità, registrare:\nd. Non pertinente - non è un componente ad alta disponibilità o non presenta funzioni essenziali",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 1D",
+  "section": "CCSC",
+  "name": "Support of essential functions - I&A and SIF initiation",
+  "description": "I controlli di accesso (IAC e UC) non devono impedire il funzionamento delle funzioni essenziali, in particolare:\n- L'identificazione e l'autenticazione non devono impedire l'avvio del SIF (vedere 5.3, SR 1.1 – Identificazione e autenticazione dell'utente umano e 5.4, SR 1.2 – Identificazione e autenticazione del processo software e del dispositivo).",
+  "validation": "Se il componente dispone di una funzione di sicurezza strumentata (SIF), verificare nella documentazione di progettazione che l'identificazione e l'autenticazione non impediscano l'avvio della SIF (vedere FSA-CR 1.1 – Identificazione e autenticazione dell'utente umano e FSA-CR 1.2 – Identificazione e autenticazione del processo software e del dispositivo). Verificare tramite test che l'avvio della SIF avvenga come previsto, indipendentemente dallo stato di autenticazione degli utenti del componente.\n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non dispone di SIF, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CCSC 1E",
+  "section": "CCSC",
+  "name": "Support of essential functions - authorization and SIF initiation",
+  "description": "I controlli di accesso (IAC e UC) non devono impedire il funzionamento delle funzioni essenziali, in particolare:\nL'applicazione delle autorizzazioni non deve impedire l'avvio del SIF (vedere 6.3, SR 2.1 – Applicazione delle autorizzazioni).",
+  "validation": "Se il componente dispone di una funzione di sicurezza strumentata (SIF), verificare nella documentazione di progetto che l'applicazione dell'autorizzazione non impedisca l'avvio della SIF (vedere FSA-CR 2.1 – Applicazione dell'autorizzazione).\n\nAnnotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non dispone di SIF, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CCSC 1F",
+  "section": "CCSC",
+  "name": "Support of essential functions - incorrect timestamps",
+  "description": "I registri di audit con timestamp errati (vedere 6.10, SR 2.8 – Eventi verificabili e 6.13 SR 2.11 – Timestamp) non devono pregiudicare le funzioni essenziali.",
+  "validation": "Verificare, utilizzando la documentazione di progettazione, che i record di audit con timestamp errati non influiscano negativamente sulle funzioni essenziali. (Vedere FSA-CR 2.8 - Eventi verificabili e FSA-CR 2.11 Timestamp). \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nc. Non pertinente - nessuna funzione essenziale",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 1G",
+  "section": "CCSC",
+  "name": "Support of essential functions - zone isolation",
+  "description": "Le funzioni essenziali di un IACS devono essere mantenute anche se la protezione del confine di zona passa in modalità fail-close e/o isola (vedere 9.4, SR 5.2 – Protezione del confine di zona).",
+  "validation": "Nella norma IEC 62443-3 non è previsto alcun requisito a livello di componente associato a tale requisito, pertanto non è richiesta alcuna attività di validazione.",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CCSC 1H",
+  "section": "CCSC",
+  "name": "Support of essential functions - DoS and SIF initiation",
+  "description": "Un evento di negazione del servizio (DoS) sulla rete del sistema di controllo o del sistema strumentato di sicurezza (SIS) non deve impedire l'intervento del SIF (vedere 11.3, SR 7.1 – Protezione contro la negazione del servizio).",
+  "validation": "Se il componente dispone di una funzione di sicurezza strumentata (SIF) e il requisito FSA-CR 7.1 Protezione contro il rifiuto di servizio è stato soddisfatto, registrare una delle seguenti opzioni, come specificato per tale requisito, per la funzione essenziale SIF:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non dispone di SIF, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CCSC 2",
+  "section": "CCSC",
+  "name": "Compensating countermeasures",
+  "description": "Vi saranno casi in cui uno o più requisiti specificati nel documento non potranno essere soddisfatti senza l'ausilio di una contromisura compensativa esterna al componente. In tal caso, la documentazione relativa al componente dovrà descrivere le contromisure appropriate applicate dal sistema per consentire il soddisfacimento del requisito una volta che il componente è integrato nel sistema.",
+  "validation": "Identificare eventuali requisiti derivati ​​da FR 1 - FR 7 che:\n- siano applicabili al livello di certificazione e\n- il risultato registrato per l'attività di validazione nel presente documento sia \"Soddisfatto mediante integrazione nel sistema\".\n\nSe esistono tali requisiti, verificare per ciascuno di essi che la documentazione del componente descriva le contromisure appropriate applicate da un sistema per consentire il soddisfacimento del requisito quando il componente viene integrato in tale sistema. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non esistono requisiti che soddisfino questi criteri, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 3",
+  "section": "CCSC",
+  "name": "Least privilege",
+  "description": "Quando necessario e opportuno, uno o più componenti del sistema (applicazioni software, dispositivi embedded, dispositivi host e dispositivi di rete) devono fornire la capacità di far rispettare il principio del minimo privilegio. I singoli componenti del sistema devono garantire la granularità delle autorizzazioni e la flessibilità di mappatura di tali autorizzazioni ai ruoli, in misura sufficiente a supportarle. La responsabilità individuale deve essere disponibile quando richiesta.",
+  "validation": "L'elemento di certificazione SDLPA previsto dal requisito SDLA-SG-6 nel documento SDLA-312 richiede informazioni sulle autorizzazioni e i privilegi degli account utente necessari per utilizzare il prodotto. Se la valutazione per SDLA-SG-6 è stata superata, verificare che il fornitore abbia eseguito e documentato un'analisi delle attività relative al componente. Verificare che tale analisi mostri le autorizzazioni fornite e la capacità di mappatura delle autorizzazioni ai ruoli con un livello di granularità e flessibilità sufficiente a garantire il principio del minimo privilegio nell'assegnazione delle attività agli utenti. Se il requisito CR 2.1 è stato soddisfatto con la dipendenza da contromisure esterne, l'assegnazione e la mappatura delle autorizzazioni per gli utenti umani possono avvenire esternamente al componente, utilizzando contromisure compensative a livello di sistema o di componente e/o procedure documentate nelle linee guida di sicurezza del fornitore per il componente. Esempi di assegnazione esterna dei privilegi sono: fornire un account privilegiato per utilizzare uno strumento di configurazione esterno oppure fornire a un individuo una chiave fisica per un contenitore che protegge l'accesso dell'utente a tale strumento. Il ricorso a contromisure esterne non integrate nel sistema, come nell'ultimo esempio, è consentito solo per SL-C = 1. \n\nIndicare una delle seguenti opzioni:\na. Soddisfatto dal componente (senza contromisure esterne)\nb. Soddisfatto con dipendenza da contromisure esterne (anche il requisito CR 2.1 deve essere soddisfatto con dipendenza da contromisure esterne affinché questa opzione sia selezionabile)\nc. Non soddisfatto\n\nSe la valutazione per SDLA-SG-6 non è stata superata, indicare:\nc. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CCSC 4",
+  "section": "CCSC",
+  "name": "Software development process",
+  "description": "Tutti i componenti definiti nel presente documento devono essere sviluppati e supportati seguendo i processi di sviluppo sicuro del prodotto descritti nella norma IEC 62443‑4‑1 [12].",
+  "validation": "Gli elementi di certificazione SDLPA e SDA verificano questo requisito. Se tali elementi sono stati superati secondo i criteri descritti nel documento dei criteri di certificazione per questa valutazione (specifica numero 300), registrare:\na. Soddisfatto\n\nAltrimenti, registrare:\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.1",
+  "section": "FR 1",
+  "name": "Human user identification and authentication",
+  "description": "I componenti devono fornire la capacità di identificare e autenticare tutti gli utenti umani secondo IEC 62443‑3‑3 [11] SR 1.1 su tutte le interfacce in grado di consentire l'accesso da parte degli utenti umani. Questa capacità deve imporre tale identificazione e autenticazione su tutte le interfacce che forniscono accesso da parte degli utenti umani al componente per supportare la separazione dei compiti e il principio del minimo privilegio in conformità con le politiche e le procedure di sicurezza applicabili. Questa capacità può essere fornita localmente dal componente o mediante l'integrazione in un sistema di identificazione e autenticazione a livello di sistema.",
+  "validation": "Se il componente ha utenti umani, verificare che sia in grado di identificare e autenticare tutti gli utenti su tutte le interfacce accessibili, localmente o tramite integrazione in un sistema. Si noti che l'identificazione e l'autenticazione degli utenti possono essere basate sui ruoli o sui gruppi (ad esempio, per alcune interfacce del componente, più utenti possono condividere la stessa identità). \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non ha utenti umani, registrare:\nd. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.1 RE(1)",
+  "section": "FR 1",
+  "name": "Unique identification and authentication",
+  "description": "I componenti devono fornire la capacità di identificare e autenticare in modo univoco tutti gli utenti umani.",
+  "validation": "Se il componente ha utenti umani, verificare che sia in grado di identificare e autenticare in modo univoco tutti gli utenti umani su tutte le interfacce accessibili, localmente o tramite integrazione in un sistema. \n\nIndicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non ha utenti umani, indicare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.1 RE(2)",
+  "section": "FR 1",
+  "name": "Multifactor authentication for all interfaces",
+  "description": "I componenti devono fornire la capacità di utilizzare l'autenticazione a più fattori per tutti gli accessi degli utenti umani al componente.",
+  "validation": "Se il componente ha utenti umani, verificare che sia in grado di fornire l'autenticazione a più fattori per tutti gli utenti umani, localmente o tramite integrazione in un sistema.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non ha utenti umani, indicare:\nd. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.2",
+  "section": "FR 1",
+  "name": "Software process and device identification and authentication",
+  "description": "I componenti devono essere in grado di identificarsi e autenticarsi presso qualsiasi altro componente (applicazione software, dispositivi embedded, dispositivi host e dispositivi di rete), secondo la norma IEC 62443‑3‑3 [11] SR1.2.\nSe il componente, come nel caso di un'applicazione, è in esecuzione nel contesto di un utente umano, inoltre, l'identificazione e l'autenticazione dell'utente umano secondo la norma IEC 62443‑3‑3 [11] SR1.1 possono far parte del processo di identificazione e autenticazione del componente nei confronti degli altri componenti.",
+  "validation": "Il fornitore deve fornire un elenco di tutti i tipi di processi software e dispositivi con cui il componente può connettersi. Per tutti i tipi di processi software e dispositivi elencati, verificare che esistano prove che il componente in fase di valutazione sia in grado di identificarsi e autenticarsi presso un'entità di tale tipo, per le connessioni in uscita dal componente verso tale entità. Inoltre, verificare che esistano prove che il componente sia in grado di identificare e autenticare ogni istanza di un processo software e dispositivo di un tipo elencato, per le connessioni in entrata da tale entità al componente in fase di valutazione. L'identificazione e l'autenticazione delle entità che effettuano connessioni in entrata possono essere fornite localmente o tramite l'integrazione in un sistema di identificazione e autenticazione a livello di sistema.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Soddisfatto tramite integrazione nel sistema (per le connessioni in entrata)\nc. Non soddisfatto\nd. Non pertinente: il componente non scambia dati con altri dispositivi o processi software",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.2 RE(1)",
+  "section": "FR 1",
+  "name": "Unique identification and authentication",
+  "description": "I componenti devono essere in grado di identificarsi e autenticarsi in modo univoco rispetto a qualsiasi altro componente.",
+  "validation": "Il fornitore deve fornire un elenco di tutti i processi software e i dispositivi a cui il componente può connettersi. Verificare che esistano prove che il componente sia in grado di fornire un identificativo univoco a ciascun processo e dispositivo a cui può connettersi.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.3",
+  "section": "FR 1",
+  "name": "Account management",
+  "description": "I componenti devono fornire la capacità di supportare la gestione di tutti gli account direttamente o integrati in un sistema che gestisce gli account secondo IEC 62443‑3‑3 [11] SR 1.3.",
+  "validation": "Se il componente offre la capacità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che il componente supporti le funzioni di gestione degli account tramite un ruolo di tipo amministratore per creare, attivare, modificare, disabilitare e rimuovere gli account, direttamente o tramite integrazione in un sistema. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\nSe il componente non offre la capacità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nd. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.4",
+  "section": "FR 1",
+  "name": "Identifier management",
+  "description": "I componenti devono fornire la capacità di integrarsi in un sistema che supporta la gestione degli identificatori e/o fornire la capacità di supportare direttamente la gestione degli identificatori secondo IEC 62443‑3‑3 [11] SR 1.4.",
+  "validation": "Se il componente offre la possibilità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che la documentazione utente indichi che il componente consente la gestione degli identificativi per utente, gruppo, ruolo e/o interfaccia, direttamente o tramite integrazione in un sistema. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\nSe il componente non offre la possibilità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nd. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.5A",
+  "section": "FR 1",
+  "name": "Authenticator management - initialize authenticator content",
+  "description": "I componenti devono fornire la capacità di supportare l'utilizzo del contenuto iniziale dell'autenticatore.",
+  "validation": "Se il componente offre la possibilità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che la documentazione utente indichi la possibilità di definire il contenuto iniziale dell'autenticatore. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non offre la possibilità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.5B",
+  "section": "FR 1",
+  "name": "Authenticator management - change default authenticators",
+  "description": "I componenti devono essere in grado di supportare il riconoscimento delle modifiche apportate agli autenticatori predefiniti in fase di installazione.",
+  "validation": "Se il componente offre la possibilità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che la documentazione utente indichi la possibilità di modificare gli autenticatori predefiniti (come le password predefinite) al momento dell'installazione. Verificare, tramite test, che il componente riconosca tali modifiche dopo l'installazione come previsto. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non offre la possibilità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.5C",
+  "section": "FR 1",
+  "name": "Authenticator management - change/refresh all authenticators periodically",
+  "description": "I componenti devono essere in grado di funzionare correttamente con operazioni periodiche di modifica/aggiornamento dell'autenticatore.",
+  "validation": "Se il componente offre la capacità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che la documentazione utente indichi la capacità di funzionare correttamente con autenticatori modificati/aggiornati. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non offre la capacità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.5D",
+  "section": "FR 1",
+  "name": "Authenticator management - protect authenticators",
+  "description": "I componenti devono garantire la capacità di proteggere gli autenticatori da divulgazione e modifica non autorizzate durante l'archiviazione, l'utilizzo e la trasmissione.",
+  "validation": "Se il componente offre la capacità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che la progettazione o la documentazione utente indichino la capacità di proteggere gli autenticatori da divulgazione e modifica non autorizzate quando vengono memorizzati, utilizzati o trasmessi dal componente. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non offre la capacità di identificare e autenticare utenti di qualsiasi tipo come descritto sopra, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.5 RE(1)",
+  "section": "FR 1",
+  "name": "Hardware security for authenticators",
+  "description": "Gli autenticatori su cui si basa il componente devono essere protetti tramite meccanismi hardware.",
+  "validation": "Verificare che la documentazione utente o di progettazione indichi la possibilità di proteggere gli autenticatori pertinenti con meccanismi hardware. \n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 1.6",
+  "section": "FR 1",
+  "name": "Wireless access management",
+  "description": "Un dispositivo di rete che supporta la gestione dell'accesso wireless deve essere in grado di identificare e autenticare tutti gli utenti (persone, processi software o dispositivi) coinvolti nella comunicazione wireless.",
+  "validation": "Se il dispositivo di rete supporta la gestione dell'accesso wireless, verificare che sia in grado di identificare e autenticare tutti gli utenti (persone, processi software o dispositivi) coinvolti nella comunicazione wireless. Si noti che l'identificazione e l'autenticazione degli utenti possono essere basate sui ruoli o sui gruppi (ad esempio, per alcune interfacce dei componenti, più utenti possono condividere la stessa identità). \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo di rete non supporta la gestione dell'accesso wireless, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 1.6 RE(1)",
+  "section": "FR 1",
+  "name": "Unique identification and authentication",
+  "description": "Il dispositivo di rete deve essere in grado di identificare e autenticare in modo univoco tutti gli utenti (persone, processi software o dispositivi) coinvolti nella comunicazione wireless.",
+  "validation": "Se il dispositivo di rete supporta la comunicazione wireless, verificare che sia in grado di identificare e autenticare in modo univoco tutti gli utenti (persone, processi software o dispositivi) coinvolti nella comunicazione wireless. \n\nAnnotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo di rete non supporta la comunicazione wireless, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.7",
+  "section": "FR 1",
+  "name": "Strength of password-based authentication",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su password, tali componenti devono fornire o integrarsi in un sistema che offra la capacità di imporre una complessità della password configurabile in conformità con le linee guida per le password riconosciute e comprovate a livello internazionale.",
+  "validation": "Se il componente utilizza l'autenticazione basata su password, verificare che la documentazione utente indichi la possibilità di imporre un livello di robustezza della password configurabile, conforme alle linee guida riconosciute e comprovate a livello internazionale, direttamente o tramite integrazione in un sistema. \n\nIndicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non utilizza l'autenticazione basata su password, indicare:\nd. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.7 RE(1)",
+  "section": "FR 1",
+  "name": "Password generation and lifetime restrictions for human users",
+  "description": "I componenti devono fornire, o integrarsi in un sistema che fornisce, la capacità di proteggere un determinato account utente umano dal riutilizzo della stessa password per un numero configurabile di generazioni. Inoltre, il componente deve fornire la capacità di imporre restrizioni sulla durata minima e massima delle password per gli utenti umani. Queste funzionalità devono essere conformi alle pratiche di sicurezza comunemente accettate nel settore.",
+  "validation": "Se il componente utilizza l'autenticazione basata su password, verificare che la documentazione utente indichi che l'utilizzo della password per gli utenti umani può essere limitato a una durata specificata e che il riutilizzo può essere limitato a un numero configurabile di generazioni, direttamente o tramite integrazione in un sistema. Verificare una fonte per le prassi comunemente accettate. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non utilizza l'autenticazione basata su password, registrare:\nd. Non pertinente",
+  "csl": [
+   3,
+   4,
+   2,
+   1
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.7 RE(2)",
+  "section": "FR 1",
+  "name": "Password lifetime restrictions for all users (human, software process, or device)",
+  "description": "I componenti devono fornire, o integrarsi in un sistema che fornisca, la capacità di imporre restrizioni sulla durata minima e massima delle password per tutti gli utenti.",
+  "validation": "Se il componente utilizza l'autenticazione basata su password, verificare che la documentazione utente indichi che il componente supporta la capacità di imporre restrizioni sulla durata minima e massima della password per tutti i tipi di utenti che supportano l'autenticazione basata su password (persone, processi software, dispositivi), direttamente o tramite integrazione in un sistema. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe il componente non utilizza l'autenticazione basata su password, registrare:\nd. Non pertinente",
+  "csl": [
+   4,
+   2,
+   1
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.8",
+  "section": "FR 1",
+  "name": "Public key infrastructure (PKI) certificates",
+  "description": "Quando viene utilizzata l'infrastruttura a chiave pubblica (PKI), il componente deve fornire o integrarsi in un sistema che fornisca la capacità di interagire e operare in conformità con IEC 62443‑3‑3 [11] SR1.8.",
+  "validation": "Esaminare la documentazione utente e determinare se il componente utilizza l'autenticazione a chiave pubblica. Ciò include l'utilizzo di certificati X509 o altri modelli di fiducia (ad esempio PGP).\n\nA titolo di riferimento, la norma IEC 62443-3-3 SR 1.8 afferma: \"Laddove venga utilizzata un'infrastruttura a chiave pubblica (PKI), il sistema di controllo deve essere in grado di gestire una PKI secondo le migliori pratiche comunemente accettate o di ottenere certificati a chiave pubblica da una PKI esistente\". La motivazione alla base della norma SR 1.8 è inclusa anche nella norma IEC 62443-4-2 per il requisito CR 1.8, e riportata nel presente documento nella colonna \"Motivazione e guida supplementare\" a destra.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, per i certificati non ottenuti da una PKI esistente, verificare che la documentazione utente indichi che le pratiche di infrastruttura a chiave pubblica richieste dalla norma SR 1.8 siano supportate, direttamente o tramite integrazione nel sistema. \n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\nSe il componente non utilizza l'autenticazione tramite chiave pubblica, registrare: \nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9A",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication - check validity of signature of a given certificate",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di convalidare i certificati verificando la validità della firma di un determinato certificato.",
+  "validation": "Esaminare la documentazione utente e verificare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, verificare nella documentazione utente che la validità della firma possa essere determinata, direttamente o tramite integrazione in un sistema, senza comunicare al di fuori dello stesso ambiente IACS, ad esempio verso Internet o verso una zona IACS meno sicura.\n\nSe il componente supporta direttamente tale funzionalità, verificarla anche con il seguente test in un ambiente senza connessione a Internet. Fornire al componente un certificato con una firma non valida. Verificare che il problema venga rilevato e segnalato all'utente. \n\nAnnotare una delle seguenti opzioni:\na. Componente soddisfatto\nb. Integrazione nel sistema soddisfatta\nc. Non soddisfatto\n\nSe l'autenticazione a chiave pubblica non viene utilizzata, annotare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9B",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication -validate certificate chain",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di convalidare la catena di certificati o, nel caso di certificati autofirmati, distribuendo certificati foglia a tutti gli host che comunicano con il soggetto a cui è stato rilasciato il certificato.",
+  "validation": "Esaminare la documentazione utente e verificare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, esaminare la documentazione di progettazione e verificare se il componente è in grado, direttamente o tramite integrazione in un sistema, di convalidare la catena di certificati senza comunicare al di fuori dello stesso ambiente IACS o, nel caso di certificati autofirmati, distribuendo certificati foglia a tutti i nodi che comunicano con il soggetto a cui è stato rilasciato il certificato. Esempi di comunicazione al di fuori dello stesso ambiente IACS sono la comunicazione con Internet o con una zona IACS meno sicura. \n\nIndicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione con il sistema\nc. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave pubblica, indicare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9C",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication - check certificate's revocation status",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di convalidare i certificati verificando lo stato di revoca di un determinato certificato.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, verificare nella documentazione utente che il componente sia in grado, direttamente o tramite integrazione in un sistema, di controllare lo stato di revoca della certificazione senza comunicare al di fuori dello stesso ambiente IACS, ad esempio con Internet o con una zona IACS meno sicura.\n\nSe il componente supporta direttamente tale funzionalità, verificarla anche con il seguente test in un ambiente senza connessione a Internet. Fornire un certificato con stato revocato. Verificare che il problema venga rilevato e segnalato all'utente.\n\nIndicare una delle seguenti opzioni:\na. Componente soddisfatto\nb. Integrazione nel sistema soddisfatta\nc. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave pubblica, indicare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9D",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication - establish user control of private key",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di stabilire il controllo da parte dell'utente (umano, processo software o dispositivo) della corrispondente chiave privata.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, esaminare la documentazione utente per verificare che le coppie di chiavi possano essere generate direttamente o tramite integrazione in un sistema, senza comunicare al di fuori dello stesso ambiente IACS, ad esempio con Internet o con una zona IACS meno affidabile. Verificare, tramite l'esame della documentazione utente e di progettazione, che le chiavi private corrispondenti siano accessibili solo al proprietario della chiave, che sia una persona, un processo software o un dispositivo. Annotare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave pubblica, annotare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9E",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication - map authenticated identity to a user",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di mappare l'identità autenticata a un utente (umano, processo software o dispositivo).",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, esaminare la documentazione utente per verificare che un'identità autenticata tramite autenticazione a chiave pubblica sia mappata a un utente del componente (persona, processo software o dispositivo), senza comunicare al di fuori dello stesso ambiente IACS, ad esempio con Internet o con una zona IACS meno affidabile. Registrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto dall'integrazione nel sistema\nc. Non soddisfatto\n\nSe l'autenticazione a chiave pubblica non viene utilizzata, registrare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9F",
+  "section": "FR 1",
+  "name": "Strength of public key-based authentication - use of cryptography",
+  "description": "Per i componenti che utilizzano l'autenticazione basata su chiave pubblica, tali componenti devono fornire direttamente o integrarsi in un sistema che offra la capacità, all'interno dello stesso ambiente IACS, di garantire che gli algoritmi e le chiavi utilizzati per l'autenticazione a chiave pubblica siano conformi al CR 4.3 – Uso della crittografia.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, esaminare la documentazione di progettazione per verificare che il componente fornisca tale funzionalità, direttamente o tramite integrazione in un sistema, e senza comunicazioni al di fuori dello stesso ambiente IACS, per garantire che gli algoritmi e le chiavi utilizzati siano conformi alla norma FSA-CR 4.3 - Uso della crittografia. Esempi di comunicazioni al di fuori dello stesso ambiente IACS sono la comunicazione con Internet o con una zona IACS meno sicura. Indicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave pubblica, indicare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.9 RE(1)",
+  "section": "FR 1",
+  "name": "Hardware security for public key-based authentication",
+  "description": "I componenti devono garantire la capacità di proteggere le chiavi private critiche e di lunga durata tramite meccanismi hardware.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave pubblica.\n\nSe viene utilizzata l'autenticazione a chiave pubblica, esaminare la documentazione di progettazione per verificare che vengano utilizzati meccanismi hardware per proteggere le chiavi private critiche a lungo termine, direttamente dal componente o tramite integrazione in un sistema. Annotare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto\n\nSe l'autenticazione a chiave pubblica non viene utilizzata, annotare:\nd. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.10",
+  "section": "FR 1",
+  "name": "Authenticator feedback",
+  "description": "Quando un componente fornisce una funzionalità di autenticazione, deve anche fornire la capacità di oscurare il feedback delle informazioni sull'autenticatore durante il processo di autenticazione.",
+  "validation": "Se il componente fornisce localmente una funzionalità di autenticazione, verificare che sia in grado di nascondere il feedback delle informazioni di autenticazione. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce localmente una funzionalità di autenticazione, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.11A",
+  "section": "FR 1",
+  "name": "Unsuccessful login attempts - limit number",
+  "description": "Quando un componente fornisce una funzionalità di autenticazione, deve essere in grado di imporre un limite al numero configurabile di tentativi di accesso non validi consecutivi da parte di qualsiasi utente (umano, processo software o dispositivo) durante un periodo di tempo configurabile.",
+  "validation": "Se il componente fornisce localmente una funzionalità di autenticazione, verificare che sia in grado di imporre un limite configurabile al numero di tentativi di accesso non validi consecutivi da parte di qualsiasi utente (umano, processo software o dispositivo) durante un periodo di tempo configurabile. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce localmente una funzionalità di autenticazione, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.11B",
+  "section": "FR 1",
+  "name": "Unsuccessful login attempts - response",
+  "description": "Quando un componente fornisce una funzionalità di autenticazione, deve anche prevedere la possibilità di negare l'accesso per un periodo di tempo specificato o fino a quando non venga sbloccato da un amministratore al raggiungimento di tale limite.",
+  "validation": "Se il componente fornisce localmente una funzionalità di autenticazione, verificare che sia in grado di negare l'accesso per un periodo di tempo specificato o fino a quando non viene sbloccato da un amministratore al raggiungimento di un limite configurato per i tentativi di accesso non riusciti. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce localmente una funzionalità di autenticazione, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.12",
+  "section": "FR 1",
+  "name": "System use notification",
+  "description": "Quando un componente fornisce accesso locale all'utente umano/interfaccia uomo-macchina (HMI), deve essere in grado di visualizzare un messaggio di notifica sull'utilizzo del sistema prima dell'autenticazione. Il messaggio di notifica sull'utilizzo del sistema deve essere configurabile dal personale autorizzato.",
+  "validation": "Se il componente fornisce accesso locale all'utente/interfaccia HMI, verificare che sia in grado di visualizzare notifiche di utilizzo del sistema configurabili dall'utente prima dell'autenticazione. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce accesso locale all'utente/interfaccia HMI, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 1.13",
+  "section": "FR 1",
+  "name": "Access via untrusted networks",
+  "description": "Il dispositivo di rete che consente l'accesso a una rete deve essere in grado di monitorare e controllare tutti i metodi di accesso al dispositivo di rete tramite reti non attendibili.",
+  "validation": "A meno che il fornitore non abbia documentato che un dispositivo di rete non è destinato a supportare l'accesso a una rete tramite una rete non attendibile, verificare che il dispositivo di rete sia in grado di ispezionare tutto il traffico di rete che vi accede, laddove tale ispezione determini se il dispositivo di rete intraprenda azioni per controllare il traffico. Esempi di azioni di controllo supportate possono includere il reindirizzamento o l'eliminazione del traffico. I metodi di accesso al dispositivo di rete soggetti a questo requisito includono, a titolo esemplificativo, la connessione dial-up, la banda larga e la connessione wireless.\n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il fornitore ha documentato che un dispositivo di rete non può essere utilizzato per supportare l'accesso a una rete, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 1.13 RE(1)",
+  "section": "FR 1",
+  "name": "Explicit access request approval",
+  "description": "Il dispositivo di rete deve essere in grado di negare le richieste di accesso tramite reti non attendibili, a meno che non siano esplicitamente autorizzate da un ruolo assegnato.",
+  "validation": "Verificare tramite test che: il dispositivo di rete possa assegnare a un utente un ruolo che autorizzi l'accesso al dispositivo di rete da reti non attendibili e che, di conseguenza, l'accesso sia consentito solo alle reti così approvate e non alle altre.",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.14A",
+  "section": "FR 1",
+  "name": "Strength of symmetric key-based authentication - establish trust",
+  "description": "Per i componenti che utilizzano chiavi simmetriche, il componente deve fornire la capacità di stabilire la fiducia reciproca utilizzando la chiave simmetrica.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave simmetrica.\n\nSe viene utilizzata l'autenticazione a chiave simmetrica, verificare che la documentazione utente indichi la capacità del componente di stabilire una fiducia reciproca tramite la chiave simmetrica. Annotare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta\n\nSe l'autenticazione a chiave simmetrica non viene utilizzata, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.14B",
+  "section": "FR 1",
+  "name": "Strength of symmetric key-based authentication - secure storage for shared secret",
+  "description": "Per i componenti che utilizzano chiavi simmetriche, il componente deve fornire la capacità di memorizzare in modo sicuro il segreto condiviso (l'autenticazione è valida finché il segreto condiviso rimane segreto).",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave simmetrica.\n\nSe viene utilizzata l'autenticazione a chiave simmetrica, verificare che la documentazione utente e di progettazione indichi la capacità di proteggere il segreto condiviso da divulgazioni non autorizzate. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe non viene utilizzata l'autenticazione a chiave simmetrica, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.14C",
+  "section": "FR 1",
+  "name": "Strength of symmetric key-based authentication - restrict access to shared secret",
+  "description": "Per i componenti che utilizzano chiavi simmetriche, il componente deve fornire la capacità di limitare l'accesso al segreto condiviso.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave simmetrica.\n\nSe viene utilizzata l'autenticazione a chiave simmetrica, verificare che la progettazione e la documentazione utente indichino la capacità di proteggere il segreto condiviso da usi o modifiche non autorizzati. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave simmetrica, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.14D",
+  "section": "FR 1",
+  "name": "",
+  "description": "Per i componenti che utilizzano chiavi simmetriche, il componente deve fornire la capacità di garantire che gli algoritmi e le chiavi utilizzati per l'autenticazione con chiave simmetrica siano conformi alla sottoclausola 8.5 del CR 4.3 - Uso della crittografia.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave simmetrica.\n\nSe viene utilizzata l'autenticazione a chiave simmetrica, esaminare la documentazione di progettazione per verificare che il componente offra la capacità di garantire che gli algoritmi e le chiavi utilizzati siano conformi alla norma FSA-CR 4.3 - Uso della crittografia. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave simmetrica, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 1.14 RE(1)",
+  "section": "FR 1",
+  "name": "Hardware security for symmetric key-based authentication",
+  "description": "I componenti devono essere in grado di proteggere, tramite meccanismi hardware, le chiavi simmetriche critiche e di lunga durata.",
+  "validation": "Esaminare la documentazione utente e determinare se viene utilizzata l'autenticazione a chiave simmetrica.\n\nSe viene utilizzata l'autenticazione a chiave simmetrica, esaminare la documentazione di progettazione per verificare che vengano utilizzati meccanismi hardware per proteggere le chiavi simmetriche critiche a lunga durata. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non viene utilizzata l'autenticazione a chiave simmetrica, indicare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.1",
+  "section": "FR 2",
+  "name": "Authorization enforcement",
+  "description": "I componenti devono fornire un meccanismo di applicazione dell'autorizzazione per tutti gli utenti identificati e autenticati, in base alle responsabilità loro assegnate.",
+  "validation": "Per i livelli di sicurezza delle capacità 3 e 4, o se il componente fornisce la capacità di identificare e autenticare direttamente gli utenti umani, verificare che il componente applichi direttamente le autorizzazioni affinché questi utenti possano controllare l'utilizzo del componente come configurato. Per i livelli di sicurezza delle capacità 1 e 2, se il componente fornisce la capacità di identificare e autenticare gli utenti umani tramite l'integrazione in un sistema, verificare che le autorizzazioni di accesso al componente siano applicate dal componente stesso e/o da contromisure esterne documentate nelle linee guida di sicurezza del fornitore. Queste contromisure esterne possono includere meccanismi che possono essere o meno integrati nel sistema e politiche/procedure che limitano le modalità di connessione degli utenti umani al componente. L'affidamento a contromisure esterne non integrate nel sistema, o l'affidamento all'adesione a politiche/procedure eseguite da personale non amministrativo, è consentito solo per SL-C=1. Registrare una delle seguenti opzioni:\n\na. Soddisfatto dal componente (senza contromisure esterne)\nb. Soddisfatto con dipendenza da contromisure esterne\nc. Non soddisfatto\nSe il componente non ha utenti umani, registrare:\nd. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.1 RE(1)",
+  "section": "FR 2",
+  "name": "Authorization enforcement for all users (humans, software processes and devices)",
+  "description": "I componenti devono fornire un meccanismo di applicazione delle autorizzazioni per tutti gli utenti, basato sulle responsabilità loro assegnate e sul principio del minimo privilegio.",
+  "validation": "Esaminare la documentazione utente e determinare se i processi software o i dispositivi sono supportati con account utente sul componente.\n\nSe i processi software o i dispositivi sono supportati con account utente, verificare che il componente applichi le autorizzazioni per i processi e gli utenti dei dispositivi per controllare l'utilizzo del componente come configurato dalla gestione degli account.\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe i processi software o i dispositivi non sono supportati con account utente sul componente, registrare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.1 RE(2)",
+  "section": "FR 2",
+  "name": "Permission mapping to roles",
+  "description": "I componenti devono prevedere, direttamente o tramite un meccanismo di sicurezza compensativo, un ruolo autorizzato a definire e modificare la mappatura delle autorizzazioni ai ruoli per tutti gli utenti umani.",
+  "validation": "Se il componente offre la capacità di identificare e autenticare utenti di qualsiasi tipo (persone, processi software o dispositivi), direttamente o tramite integrazione in un sistema, verificare che offra anche la capacità di mappare le autorizzazioni ai ruoli per questi utenti tramite un account di supervisione autorizzato, direttamente o tramite un meccanismo di sicurezza compensativo. Registrare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto da un meccanismo di sicurezza compensativo\nc. Non soddisfatto\nSe il componente non offre la capacità di identificare e autenticare utenti di qualsiasi tipo come descritto, registrare:\nd. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.1 RE(3)",
+  "section": "FR 2",
+  "name": "Supervisor override",
+  "description": "I componenti devono supportare un comando manuale di supervisione per un intervallo di tempo o una sequenza di eventi configurabili.",
+  "validation": "Se il componente dispone di un'interfaccia operatore, verificare che supporti la sovrascrittura da parte del supervisore delle autorizzazioni di ruolo per le azioni su tale interfaccia. Verificare che la sovrascrittura possa essere configurata per essere attiva per un periodo di tempo configurabile o per una sequenza di eventi. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nNota: se il componente dispone di un'interfaccia operatore ma i ruoli non sono supportati per tale interfaccia, sia questo requisito che il requisito FSA-CR 2.1 devono essere registrati come non soddisfatti.\n\nSe il componente non dispone di un'interfaccia operatore, registrare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.1 RE(4)",
+  "section": "FR 2",
+  "name": "Dual approval",
+  "description": "I componenti devono supportare la doppia approvazione quando un intervento può avere un impatto significativo sul processo industriale.",
+  "validation": "Se il componente dispone di un'interfaccia operatore, verificare che supporti la doppia approvazione per le azioni su tale interfaccia che potrebbero avere un impatto sul processo industriale. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il componente non dispone di un'interfaccia operatore, registrare:\nc. Non pertinente",
+  "csl": [
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.2",
+  "section": "FR 2",
+  "name": "Wireless use control",
+  "description": "Se un componente supporta l'utilizzo tramite interfacce wireless, deve essere in grado di integrarsi nel sistema che supporta l'autorizzazione, il monitoraggio e la limitazione dell'utilizzo secondo le prassi comunemente accettate nel settore.",
+  "validation": "Se il componente supporta l'utilizzo tramite interfacce wireless, verificare con la documentazione utente che il componente possa integrarsi in un sistema per autorizzare l'utilizzo, monitorare e applicare restrizioni di utilizzo per la connettività wireless al componente, in conformità con le pratiche di sicurezza comunemente accettate. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non supporta l'utilizzo tramite interfacce wireless, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.3",
+  "section": "FR 2",
+  "name": "Use control for portable and mobile devices",
+  "description": "Non esiste alcun requisito a livello di componente associato alla norma IEC 62443‑3‑3 SR 2.3.",
+  "validation": "Nessuna attività di convalida",
+  "csl": [],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-SAR 2.4A",
+  "section": "FR 2",
+  "name": "Mobile code - control execution",
+  "description": "Qualora un'applicazione software utilizzi tecnologie di codice mobile, tale applicazione dovrà prevedere la possibilità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza dovrà consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata nell'applicazione software, di intervenire per controllarne l'esecuzione.",
+  "validation": "Esaminare la documentazione utente e determinare se l'applicazione software utilizza tecnologie di codice mobile.\n\nSe l'applicazione software utilizza tecnologie di codice mobile, esaminare la documentazione utente e verificare che l'applicazione offra la possibilità di applicare una policy di sicurezza per l'utilizzo di tali tecnologie. Verificare che sia supportata, come minimo, una policy che impedisca l'esecuzione di ciascuna tecnologia di codice mobile utilizzata, quando avviata dall'applicazione software, sul dispositivo host. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta\n\nSe l'applicazione software non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-SAR 2.4B",
+  "section": "FR 2",
+  "name": "Mobile code - control transfer by user",
+  "description": "Qualora un'applicazione software utilizzi tecnologie di codice mobile, tale applicazione dovrà prevedere la possibilità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza dovrà consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata nell'applicazione software, di controllare quali utenti (umani, processi software o dispositivi) sono autorizzati a trasferire codice mobile da/verso l'applicazione.",
+  "validation": "Esaminare la documentazione utente e determinare se l'applicazione software utilizza tecnologie di codice mobile.\n\nSe l'applicazione software utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo per controllare, per ciascuna tecnologia di codice mobile, quali utenti (umani, processi software o dispositivi) sono autorizzati a trasferire codice mobile da/verso l'applicazione. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe l'applicazione software non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-SAR 2.4C",
+  "section": "FR 2",
+  "name": "Mobile code - integrity check",
+  "description": "Nel caso in cui un'applicazione software utilizzi tecnologie di codice mobile, tale applicazione deve fornire la possibilità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ogni tecnologia di codice mobile utilizzata nell'applicazione software, di intervenire per controllare l'esecuzione del codice mobile in base ai risultati di una verifica di integrità prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se l'applicazione software utilizza tecnologie di codice mobile.\n\nSe l'applicazione software utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che imponga l'esecuzione e il superamento di un controllo di integrità prima dell'esecuzione del codice mobile, per ogni tecnologia mobile utilizzata. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe l'applicazione software non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-SAR 2.4 RE(1)",
+  "section": "FR 2",
+  "name": "Mobile code authenticity check",
+  "description": "L'applicazione deve fornire la capacità di applicare una politica di sicurezza che consenta al dispositivo di controllare l'esecuzione del codice mobile in base ai risultati di una verifica di autenticità prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se l'applicazione software utilizza tecnologie di codice mobile.\n\nSe l'applicazione software utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che richieda l'esecuzione e il superamento di un controllo di autenticità prima dell'esecuzione del codice mobile.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe l'applicazione software non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 2.4A",
+  "section": "FR 2",
+  "name": "Mobile code - control execution",
+  "description": "Nel caso in cui un dispositivo embedded utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata sul dispositivo embedded, di intraprendere azioni per controllare l'esecuzione del codice mobile.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo embedded utilizza tecnologie di codice mobile.\n\nSe il dispositivo embedded utilizza tecnologie di codice mobile, esaminare la documentazione utente e verificare che il dispositivo embedded offra la possibilità di applicare una policy di sicurezza per l'utilizzo di tali tecnologie. Verificare che sia supportata almeno una policy che impedisca l'esecuzione di ciascuna tecnologia di codice mobile utilizzata sul dispositivo. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta\n\nSe il dispositivo embedded non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 2.4B",
+  "section": "FR 2",
+  "name": "Mobile code - control upload by user",
+  "description": "Nel caso in cui un dispositivo embedded utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata sul dispositivo embedded, di controllare quali utenti (umani, processi software o dispositivi) sono autorizzati a caricare codice mobile sul dispositivo.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo embedded utilizza tecnologie di codice mobile.\n\nSe il dispositivo embedded utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo per controllare, per ciascuna tecnologia di codice mobile, quali utenti (umani, processi software o dispositivi) sono autorizzati a caricare codice mobile sul dispositivo. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo embedded non utilizza tecnologie di codice mobile, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 2.4C",
+  "section": "FR 2",
+  "name": "Mobile code - integrity check",
+  "description": "Nel caso in cui un dispositivo embedded utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ogni tecnologia di codice mobile utilizzata sul dispositivo embedded, di intervenire per controllare l'esecuzione del codice mobile in base ai risultati di un controllo di integrità effettuato prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo embedded utilizza tecnologie di codice mobile.\n\nSe il dispositivo embedded utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che imponga l'esecuzione e il superamento di un controllo di integrità prima dell'esecuzione del codice mobile, per ogni tecnologia mobile utilizzata. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo embedded non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 2.4 RE(1)",
+  "section": "FR 2",
+  "name": "Mobile code authenticity check",
+  "description": "Il dispositivo integrato deve fornire la capacità di applicare una politica di sicurezza che consenta al dispositivo di controllare l'esecuzione del codice mobile in base ai risultati di una verifica di autenticità prima dell'esecuzione del codice.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo embedded utilizza tecnologie di codice mobile.\n\nSe il dispositivo embedded utilizza tecnologie di codice mobile, esaminare la documentazione del componente e verificare che esista un meccanismo di policy che richieda l'esecuzione e il superamento di un controllo di autenticità prima dell'esecuzione del codice mobile.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo embedded non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.4A",
+  "section": "FR 2",
+  "name": "Mobile code - control execution",
+  "description": "Nel caso in cui un dispositivo host utilizzi tecnologie di codice mobile, tale dispositivo deve fornire la capacità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata sul dispositivo host, di intraprendere azioni per controllare l'esecuzione del codice mobile.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo host utilizza tecnologie di codice mobile.\n\nSe il dispositivo host utilizza tecnologie di codice mobile, esaminare la documentazione utente e verificare che il dispositivo host offra la possibilità di applicare una policy di sicurezza per l'utilizzo di tali tecnologie. Verificare che sia supportata almeno una policy che impedisca l'esecuzione di ciascuna tecnologia di codice mobile utilizzata sul dispositivo host. Registrare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta\n\nSe il dispositivo host non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.4B",
+  "section": "FR 2",
+  "name": "Mobile code - control upload by user",
+  "description": "Nel caso in cui un dispositivo host utilizzi tecnologie di codice mobile, tale dispositivo deve fornire la capacità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ogni tecnologia di codice mobile utilizzata sul dispositivo host, di intervenire per controllare quali utenti (umani, processi software o dispositivi) sono autorizzati a caricare codice mobile sul dispositivo host.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo host utilizza tecnologie di codice mobile.\n\nSe il dispositivo host utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo per controllare, per ciascuna tecnologia di codice mobile, quali utenti (umani, processi software o dispositivi) sono autorizzati a caricare codice mobile sul dispositivo host. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo host non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.4C",
+  "section": "FR 2",
+  "name": "Mobile code - integrity check",
+  "description": "Nel caso in cui un dispositivo host utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ogni tecnologia di codice mobile utilizzata sul dispositivo host, di intervenire per controllare l'esecuzione del codice mobile in base ai risultati di un controllo di integrità effettuato prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo host utilizza tecnologie di codice mobile.\n\nSe il dispositivo host utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che imponga l'esecuzione e il superamento di un controllo di integrità prima dell'esecuzione del codice mobile, per ogni tecnologia mobile utilizzata. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo host non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.4 RE(1)",
+  "section": "FR 2",
+  "name": "Mobile code authenticity check",
+  "description": "Il dispositivo host deve fornire la capacità di applicare una politica di sicurezza che gli consenta di controllare l'esecuzione del codice mobile in base ai risultati di una verifica di autenticità prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo host utilizza tecnologie di codice mobile.\n\nSe il dispositivo host utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che richieda l'esecuzione e il superamento di un controllo di autenticità prima dell'esecuzione del codice mobile.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo host non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 2.4A",
+  "section": "FR 2",
+  "name": "Mobile code - control execution",
+  "description": "Nel caso in cui un dispositivo di rete utilizzi tecnologie di codice mobile, tale dispositivo deve fornire la capacità di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata sul dispositivo di rete, di intraprendere azioni per controllare l'esecuzione del codice mobile.",
+  "validation": "Esaminare la documentazione utente e verificare se il dispositivo di rete utilizza tecnologie di codice mobile.\n\nSe il dispositivo di rete utilizza tecnologie di codice mobile, esaminare la documentazione utente e verificare che il dispositivo di rete offra la possibilità di applicare una policy di sicurezza per l'utilizzo di tali tecnologie. Verificare che sia supportata almeno una policy che impedisca l'esecuzione di ciascuna tecnologia di codice mobile utilizzata sul dispositivo di rete. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta\n\nSe il dispositivo di rete non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 2.4B",
+  "section": "FR 2",
+  "name": "Mobile code - control transfer by user",
+  "description": "Nel caso in cui un dispositivo di rete utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ciascuna tecnologia di codice mobile utilizzata sul dispositivo di rete, di intervenire per controllare quali utenti (umani, processi software o dispositivi) sono autorizzati a trasferire codice mobile da/verso il dispositivo di rete.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo di rete utilizza tecnologie di codice mobile.\n\nSe il dispositivo di rete utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo per controllare, per ciascuna tecnologia di codice mobile, quali utenti (umani, processi software o dispositivi) sono autorizzati a trasferire codice mobile da/verso il dispositivo di rete. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo di rete non utilizza tecnologie di codice mobile, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 2.4C",
+  "section": "FR 2",
+  "name": "Mobile code - integrity check",
+  "description": "Nel caso in cui un dispositivo di rete utilizzi tecnologie di codice mobile, tale dispositivo deve essere in grado di applicare una politica di sicurezza per l'utilizzo di tali tecnologie. La politica di sicurezza deve consentire, come minimo, per ogni tecnologia di codice mobile utilizzata sul dispositivo di rete, di intervenire per controllare l'esecuzione del codice mobile in base ai risultati di una verifica di integrità effettuata prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo di rete utilizza tecnologie di codice mobile.\n\nSe il dispositivo di rete utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che imponga l'esecuzione e il superamento di un controllo di integrità prima dell'esecuzione del codice mobile, per ogni tecnologia mobile utilizzata. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo di rete non utilizza tecnologie di codice mobile, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 2.4 RE(1)",
+  "section": "FR 2",
+  "name": "Mobile code authenticity check",
+  "description": "Il dispositivo di rete deve fornire la capacità di applicare una politica di sicurezza che gli consenta di controllare l'esecuzione del codice mobile in base ai risultati di una verifica di autenticità prima dell'esecuzione del codice stesso.",
+  "validation": "Esaminare la documentazione utente e determinare se il dispositivo di rete utilizza tecnologie di codice mobile.\n\nSe il dispositivo di rete utilizza tecnologie di codice mobile, esaminare la documentazione dei componenti e verificare che esista un meccanismo di policy che richieda l'esecuzione e il superamento di un controllo di autenticità prima dell'esecuzione del codice mobile.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il dispositivo di rete non utilizza tecnologie di codice mobile, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.5A",
+  "section": "FR 2",
+  "name": "Session lock -  initiation",
+  "description": "Se un componente fornisce un'interfaccia utente umana, accessibile localmente o tramite rete, deve essere in grado di proteggere l'accesso da ulteriori tentativi attivando un blocco di sessione dopo un periodo di inattività configurabile o tramite attivazione manuale da parte dell'utente (umano, processo software o dispositivo).",
+  "validation": "Esaminare la documentazione utente e determinare se il componente fornisce un'interfaccia utente, accessibile localmente o tramite rete.\n\nSe il componente fornisce un'interfaccia utente, verificare che la documentazione includa prove della capacità del componente di avviare un blocco di sessione per un utente umano in seguito a uno dei seguenti eventi: inattività della sessione per un periodo di tempo superiore a quello configurabile o attivazione manuale da parte dell'utente proprietario della sessione. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce un'interfaccia utente, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.5B",
+  "section": "FR 2",
+  "name": "Session lock - removal",
+  "description": "Se un componente fornisce un'interfaccia utente, accessibile localmente o tramite rete, deve prevedere la possibilità di mantenere attivo il blocco di sessione finché l'utente proprietario della sessione, o un altro utente autorizzato, non ristabilisca l'accesso utilizzando procedure di identificazione e autenticazione appropriate.",
+  "validation": "Esaminare la documentazione utente e determinare se il componente fornisce un'interfaccia utente umana, accessibile localmente o tramite rete.\n\nSe il componente fornisce un'interfaccia utente umana, verificare che la documentazione utente includa prove che il componente offra la possibilità di bloccare una sessione, una volta avviata per qualsiasi tipo di sessione utente (umana, processo software o dispositivo), in modo che rimanga attiva fino a quando un utente umano proprietario della sessione, o un altro utente umano autorizzato, non ristabilisca l'accesso utilizzando le procedure di identificazione e autenticazione appropriate. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non fornisce un'interfaccia utente umana, annotare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.6",
+  "section": "FR 2",
+  "name": "Remote session termination",
+  "description": "Se un componente supporta sessioni remote, deve fornire la possibilità di terminare una sessione remota automaticamente dopo un periodo di inattività configurabile, manualmente da parte di un'autorità locale o manualmente dall'utente (umano, processo software o dispositivo) che ha avviato la sessione.",
+  "validation": "Esaminare la documentazione utente e verificare se il componente supporta le sessioni remote.\n\nSe il componente supporta le sessioni remote, verificare che disponga di almeno una delle seguenti funzionalità: può essere configurato per terminare automaticamente una sessione remota dopo un periodo di inattività configurabile, oppure un'autorità locale può terminare una sessione remota. Annotare una delle seguenti opzioni:\na. Garantito\nb. Non garantito\n\nSe il componente non supporta le sessioni remote, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.7",
+  "section": "FR 2",
+  "name": "Concurrent session control",
+  "description": "I componenti devono fornire la capacità di limitare il numero di sessioni simultanee per interfaccia per ciascun utente (umano, processo software o dispositivo).",
+  "validation": "Verificare che il componente sia configurabile per limitare il numero di sessioni utente (login) simultanee per interfaccia, per ogni singolo utente (umano, processo software o dispositivo). Per tutte le interfacce, verificare che il fornitore abbia eseguito e superato un test per accertare l'applicazione di tale limite, tentando di creare un numero di sessioni utente superiore al massimo consentito e verificando il rifiuto della connessione una volta raggiunta la soglia. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.8A",
+  "section": "FR 2",
+  "name": "Auditable events - categories",
+  "description": "I componenti devono fornire la capacità di generare record di controllo rilevanti per la sicurezza per le seguenti categorie: controllo degli accessi, errori di richiesta, eventi del sistema di controllo, eventi di backup e ripristino, modifiche di configurazione ed eventi del registro di controllo.",
+  "validation": "Verificare, tramite la documentazione utente, che il componente supporti la capacità di generare record di controllo rilevanti per la sicurezza per le seguenti categorie: controllo degli accessi, errori di richiesta, eventi del sistema di controllo, eventi di backup e ripristino, modifiche di configurazione ed eventi del registro di controllo. Verificare, tramite log di esempio, che vengano generati alcuni record per ciascuna di queste categorie. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.8B",
+  "section": "FR 2",
+  "name": "Auditable events - data fields",
+  "description": "I singoli registri di audit devono includere data e ora, origine (dispositivo di origine, processo software o account utente umano), categoria, tipo, ID evento e risultato dell'evento.",
+  "validation": "Verificare tramite la documentazione utente che tutti i record di audit nelle categorie elencate in FSA-CR 2.8A includano data e ora, origine (dispositivo di origine, processo software o account utente umano), categoria, tipo, ID evento e risultato dell'evento. Verificare tramite log di esempio che tutti questi campi abbiano valori presenti per tutte le categorie di record. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.9A",
+  "section": "FR 2",
+  "name": "Audit storage capacity - allocation",
+  "description": "I componenti devono fornire la capacità di allocare la capacità di archiviazione dei registri di controllo in conformità con le raccomandazioni comunemente riconosciute per la gestione dei log.",
+  "validation": "Verificare che la capacità di memorizzazione dei record di audit sul dispositivo sia documentata e che il dispositivo offra effettivamente tale capacità. Verificare che esistano prove che il fornitore abbia effettuato un'analisi per confermare che la capacità soddisfi i requisiti aziendali e normativi degli utenti. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.9B",
+  "section": "FR 2",
+  "name": "Audit storage capacity - exceeded",
+  "description": "I componenti devono prevedere meccanismi di protezione contro i guasti del componente quando raggiunge o supera la capacità di memorizzazione dei dati di audit.",
+  "validation": "Esaminare la documentazione di progettazione o eseguire dei test per verificare che tutte le funzioni del componente siano mantenute quando raggiunge o supera la capacità di archiviazione per gli audit. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.9 RE(1)",
+  "section": "FR 2",
+  "name": "Warn when audit record storage capacity threshold reached",
+  "description": "I componenti devono essere in grado di emettere un avviso quando lo spazio di archiviazione allocato per i record di controllo raggiunge una soglia configurabile.",
+  "validation": "Esaminare la documentazione utente e verificare che il componente sia in grado di emettere un avviso quando il volume di archiviazione dei record di controllo allocato sul componente raggiunge una soglia fissa o configurabile. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.10A",
+  "section": "FR 2",
+  "name": "Response to audit processing failures - maintain essential functions",
+  "description": "I componenti devono garantire la capacità di proteggere dalla perdita di servizi e funzioni essenziali in caso di errore nell'elaborazione delle verifiche.",
+  "validation": "Verificare, tramite la documentazione di progettazione, che eventuali errori software o hardware relativi all'elaborazione degli audit, o malfunzionamenti nei meccanismi di acquisizione degli audit, non causino la perdita di funzioni essenziali del componente. Registrare:\na. Soddisfatto\nb. Non soddisfatto\nc. Non pertinente - nessuna funzione essenziale\nSi noti che la convalida per FSA-CR 2.9B convalida separatamente un altro aspetto di questo requisito.",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.10B",
+  "section": "FR 2",
+  "name": "Response to audit processing failures - actions taken",
+  "description": "I componenti devono fornire la capacità di supportare azioni appropriate in risposta a un errore di elaborazione dell'audit, in conformità con le prassi e le raccomandazioni comunemente accettate nel settore.",
+  "validation": "Verificare che la documentazione utente includa prove che la funzione di audit supporti una o più prassi e raccomandazioni di settore comunemente accettate in caso di esaurimento dello spazio di archiviazione per la registrazione di nuovi eventi, ad esempio la sovrascrittura dei record di audit più vecchi o l'interruzione della generazione di record di audit. Verificare, tramite test, che il dispositivo esegua le azioni descritte nella documentazione utente in tali condizioni.\n\nVerificare nella documentazione di progettazione che, in caso di errori software o hardware relativi all'elaborazione degli audit, vengano intraprese una o più azioni in conformità con le prassi e le raccomandazioni di settore comunemente accettate, ad esempio la registrazione dell'evento o la generazione di una notifica. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.11",
+  "section": "FR 2",
+  "name": "Timestamps",
+  "description": "I componenti devono fornire la capacità di creare timestamp (compresi data e ora) da utilizzare nei registri di controllo.",
+  "validation": "Verificare, esaminando i registri di audit campione in ciascuna categoria, che i registri di audit includano le date e gli orari. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.11 RE(1)",
+  "section": "FR 2",
+  "name": "Time synchronization",
+  "description": "I componenti devono fornire la capacità di creare timestamp sincronizzati con una sorgente oraria a livello di sistema.",
+  "validation": "Verificare, utilizzando la documentazione utente, che il componente possa essere configurato per sincronizzare i timestamp con un'origine oraria a livello di sistema. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.11 RE(2)",
+  "section": "FR 2",
+  "name": "Protection of time source integrity",
+  "description": "Il meccanismo di sincronizzazione temporale deve essere in grado di rilevare alterazioni non autorizzate e di generare un evento di controllo in caso di alterazione.",
+  "validation": "Verificare che la documentazione utente includa la prova che qualsiasi alterazione non autorizzata della sincronizzazione oraria venga rilevata e che venga creato un record di evento di audit. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.12",
+  "section": "FR 2",
+  "name": "Non-repudiation",
+  "description": "Se un componente fornisce un'interfaccia utente, deve essere in grado di determinare se un determinato utente ha eseguito una particolare azione. Gli elementi di controllo che non supportano tale funzionalità devono essere elencati nella documentazione del componente.",
+  "validation": "Esaminare la documentazione utente e determinare se il componente fornisce un'interfaccia utente umana che consenta azioni da parte di utenti umani.\n\nSe il componente fornisce tale interfaccia utente umana, verificare che la documentazione dei requisiti del componente indichi che le azioni intraprese dagli utenti umani e l'utente umano responsabile di tali azioni siano registrati nei registri di audit. Come minimo, ciò si applica alle azioni relative alle funzioni di sicurezza richieste da questo standard e alle azioni di esempio riportate nella sezione \"Motivazioni e linee guida supplementari\". Verificare inoltre che i casi di test del fornitore siano mappati a questo requisito e che siano stati superati. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe un componente non fornisce tale interfaccia utente umana, verificare che il manuale utente del componente documenti che il componente non ha la capacità di registrare le azioni dell'utente. Se ciò può essere verificato, registrare:\na. Non pertinente\n\nSe ciò non può essere verificato, registrare:\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 2.12 RE(1)",
+  "section": "FR 2",
+  "name": "Non-repudiation for all users",
+  "description": "I componenti devono fornire la capacità di determinare se un determinato utente (umano, processo software o dispositivo) ha compiuto una particolare azione.",
+  "validation": "Esaminare la documentazione utente e di progettazione e determinare se il componente consente azioni da parte di soggetti diversi dagli utenti umani (processi software o dispositivi).\n\nSe il componente consente tali azioni, verificare che i requisiti del componente prevedano che tutte le azioni eseguite da un determinato utente (processo software o dispositivo) e l'utente responsabile di tali azioni siano registrati nei log di audit. Verificare inoltre che i casi di test del fornitore siano mappati a questo requisito e che siano stati superati. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe un componente non consente tali azioni, registrare:\nc. Non pertinente\n\n(Si noti che il caso degli utenti umani è trattato nella norma FSA-CR 2.12.)",
+  "csl": [
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 2.13",
+  "section": "FR 2",
+  "name": "Use of physical diagnostic and test interfaces",
+  "description": "I dispositivi embedded devono essere protetti dall'uso non autorizzato delle interfacce fisiche di diagnostica e test di fabbrica (ad esempio, debug JTAG).",
+  "validation": "Esaminare l'hardware del dispositivo embedded e la documentazione di progettazione per tutti i modelli di dispositivo inclusi nell'ambito della certificazione, nonché il modello di minaccia, per identificare eventuali interfacce diagnostiche e di test che consentano il controllo del dispositivo embedded o l'accesso a informazioni non pubbliche. Qualora siano presenti tali interfacce, esaminare la documentazione utente o di progettazione per verificare che sia necessaria l'autorizzazione di un utente autenticato, assegnato a un ruolo autorizzato al loro utilizzo, per accedervi (nel qual caso sarebbero soggette ai requisiti FR 1), o che siano altrimenti protette contro l'accesso non autorizzato.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non sono presenti tali interfacce, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 2.13 RE(1)",
+  "section": "FR 2",
+  "name": "Active monitoring",
+  "description": "I dispositivi embedded devono garantire il monitoraggio attivo delle interfacce di diagnostica e test del dispositivo e generare una voce nel registro di controllo ogni qualvolta vengano rilevati tentativi di accesso a tali interfacce.",
+  "validation": "Se durante la convalida di FSA-EDR 2.13 vengono rilevate interfacce diagnostiche o di test che consentono il controllo del dispositivo o l'accesso a informazioni non pubbliche, verificare, tramite test, che venga generata una voce nel registro di controllo ogni volta che si tenta di accedere a una di queste interfacce. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe durante la convalida di FSA-EDR 2.13 non vengono rilevate tali interfacce, registrare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.13",
+  "section": "FR 2",
+  "name": "Use of physical diagnostic and test interfaces",
+  "description": "I dispositivi host devono essere protetti dall'uso non autorizzato delle interfacce fisiche di diagnostica e test di fabbrica (ad esempio, debug JTAG).",
+  "validation": "Esaminare l'hardware del dispositivo host e la documentazione di progettazione per tutti i modelli di dispositivo inclusi nell'ambito della certificazione, nonché il modello di minaccia, per identificare eventuali interfacce diagnostiche e di test che consentano il controllo del dispositivo host o l'accesso a informazioni non pubbliche. Qualora siano presenti tali interfacce, esaminare la documentazione utente o di progettazione per verificare che sia necessaria l'autorizzazione di un utente autenticato, assegnato a un ruolo autorizzato al loro utilizzo, per accedervi (nel qual caso sarebbero soggette ai requisiti FR 1), o che siano altrimenti protette contro l'accesso non autorizzato.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non sono presenti tali interfacce, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 2.13 RE(1)",
+  "section": "FR 2",
+  "name": "Active monitoring",
+  "description": "I dispositivi host devono garantire il monitoraggio attivo delle interfacce di diagnostica e test del dispositivo e generare una voce nel registro di controllo ogni qualvolta vengano rilevati tentativi di accesso a tali interfacce.",
+  "validation": "Se durante la convalida di FSA-HDR 2.13 vengono rilevate interfacce diagnostiche o di test che consentono il controllo del dispositivo o l'accesso a informazioni non pubbliche, verificare, tramite test, che venga generata una voce nel registro di controllo ogni volta che si tenta di accedere a una di queste interfacce. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe durante la convalida di FSA-HDR 2.13 non vengono rilevate tali interfacce, registrare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 2.13",
+  "section": "FR 2",
+  "name": "Use of physical diagnostic and test interfaces",
+  "description": "I dispositivi di rete devono essere protetti dall'uso non autorizzato delle interfacce fisiche di diagnostica e test di fabbrica (ad esempio, il debug JTAG).",
+  "validation": "Esaminare l'hardware del dispositivo di rete e la documentazione di progettazione per tutti i modelli di dispositivo inclusi nell'ambito della certificazione, nonché il modello di minaccia, per identificare eventuali interfacce diagnostiche e di test che consentano il controllo del dispositivo di rete o l'accesso a informazioni non pubbliche. Qualora siano presenti tali interfacce, esaminare la documentazione utente o di progettazione per verificare che sia necessaria l'autorizzazione di un utente autenticato, assegnato a un ruolo autorizzato al loro utilizzo, per accedervi (nel qual caso sarebbero soggette ai requisiti FR 1), o che siano altrimenti protette contro l'accesso non autorizzato.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non sono presenti tali interfacce, indicare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 2.13 RE(1)",
+  "section": "FR 2",
+  "name": "Active monitoring",
+  "description": "I dispositivi di rete devono garantire il monitoraggio attivo delle interfacce di diagnostica e test del dispositivo e generare una voce nel registro di controllo ogni qualvolta vengano rilevati tentativi di accesso a tali interfacce.",
+  "validation": "Se durante la convalida di FSA-NDR 2.13 vengono rilevate interfacce diagnostiche o di test che consentono il controllo del dispositivo o l'accesso a informazioni non pubbliche, verificare, tramite test, che venga generata una voce nel registro di controllo ogni volta che si tenta di accedere a una di queste interfacce. Registrare una delle seguenti opzioni:\na. Conforme\nb. Non conforme\n\nSe durante la convalida di FSA-NDR 2.13 non vengono rilevate tali interfacce, registrare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.1",
+  "section": "FR 3",
+  "name": "Communication integrity",
+  "description": "I componenti devono garantire la capacità di proteggere l'integrità delle informazioni trasmesse.",
+  "validation": "Esaminare la documentazione di progettazione e quella utente e determinare se il componente offre la capacità di proteggere i dati trasmessi da modifiche al contenuto del messaggio. La protezione fornita deve essere superiore a quella offerta dal livello di trasporto. Un esempio è l'utilizzo di hash crittografici. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.1 RE(1)",
+  "section": "FR 3",
+  "name": "Communication authentication",
+  "description": "I componenti devono fornire la capacità di verificare l'autenticità delle informazioni ricevute durante la comunicazione.",
+  "validation": "Esaminare la documentazione di progettazione e quella utente e determinare se l'origine dei dati ricevuti dal componente può essere convalidata dal componente stesso. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-SAR 3.2",
+  "section": "FR 3",
+  "name": "Protection from malicious code",
+  "description": "Il fornitore del prodotto applicativo deve qualificare e documentare quali meccanismi di protezione da codice dannoso sono compatibili con l'applicazione e indicare eventuali requisiti di configurazione speciali.",
+  "validation": "Verificare che la documentazione di progettazione o quella per l'utente contengano prove della compatibilità dell'applicazione software con almeno un meccanismo di protezione dall'installazione e dall'esecuzione di codice dannoso sul dispositivo host. Verificare che tale documentazione indichi eventuali requisiti di configurazione specifici applicabili a tale meccanismo. Verificare che il fornitore possa fornire prove della qualificazione del meccanismo tramite test o altri mezzi.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 3.2",
+  "section": "FR 3",
+  "name": "Protection from malicious code",
+  "description": "Il dispositivo integrato deve essere in grado di proteggere dall'installazione e dall'esecuzione di software non autorizzato.",
+  "validation": "Verificare che la documentazione di progettazione o per l'utente contenga prove del fatto che il dispositivo embedded supporti protezioni contro l'installazione e l'esecuzione di software non autorizzato. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.2",
+  "section": "FR 3",
+  "name": "Protection from malicious code",
+  "description": "Sui dispositivi host devono essere presenti meccanismi, qualificati dal fornitore del prodotto IACS, in grado di fornire protezione da codice dannoso. Il fornitore del prodotto IACS deve documentare eventuali requisiti di configurazione specifici relativi alla protezione da codice dannoso.",
+  "validation": "Verificare che la documentazione di progettazione o per l'utente contenga prove che il dispositivo host supporti l'utilizzo di uno o più meccanismi di protezione dall'installazione e dall'esecuzione di codice dannoso, coprendo tutte le interfacce tramite le quali il codice potrebbe essere introdotto. Verificare che tali documenti indichino eventuali requisiti di configurazione specifici relativi al/ai meccanismo/i. Verificare che il fornitore possa fornire prove che il/i meccanismo/i siano stati qualificati tramite test o altri mezzi.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.2 RE(1)",
+  "section": "FR 3",
+  "name": "Report version of code protection",
+  "description": "Il dispositivo host deve segnalare automaticamente le versioni del software e dei file di protezione da codice dannoso in uso (nell'ambito della funzione di registrazione generale).",
+  "validation": "Verificare tramite test che il dispositivo host segnali le versioni del software e dei file di protezione da codice dannoso in uso. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.2",
+  "section": "FR 3",
+  "name": "Protection from malicious code",
+  "description": "Il dispositivo di rete deve garantire la protezione da codici dannosi.",
+  "validation": "Verificare che la documentazione di progettazione o d'uso contenga prove che il dispositivo di rete fornisca, direttamente o tramite uno o più meccanismi compensativi, protezione dall'installazione e dall'esecuzione di codice dannoso. I meccanismi devono coprire tutte le interfacce attraverso le quali è possibile introdurre codice. Verificare che tale documentazione indichi eventuali requisiti di configurazione specifici relativi ai meccanismi di protezione.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.3",
+  "section": "FR 3",
+  "name": "Security functionality verification",
+  "description": "I componenti devono fornire la capacità di supportare la verifica del funzionamento previsto delle funzioni di sicurezza secondo IEC 62443‑3‑3 [11] SR3.3.",
+  "validation": "Il componente di verifica fornisce metodi per testare le funzioni di sicurezza durante i test di accettazione in fabbrica (FAT), i test di accettazione in negozio (SAT) e la manutenzione programmata. Queste funzioni di sicurezza devono includere tutte quelle necessarie a supportare i requisiti di sicurezza specificati nella norma IEC 62443-4-2.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.3 RE(1)",
+  "section": "FR 3",
+  "name": "Security functionality verification during normal operation",
+  "description": "I componenti devono fornire la capacità di supportare la verifica del funzionamento previsto delle funzioni di sicurezza durante il normale funzionamento.",
+  "validation": "Il componente di verifica fornisce metodi per testare le funzioni di sicurezza durante il normale funzionamento.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.4",
+  "section": "FR 3",
+  "name": "Software and information integrity",
+  "description": "I componenti devono fornire la capacità di eseguire o supportare controlli di integrità su software, configurazione e altre informazioni, nonché la registrazione e la segnalazione dei risultati di tali controlli, oppure essere integrati in un sistema in grado di eseguire o supportare controlli di integrità.",
+  "validation": "Verificare che la documentazione utente descriva i meccanismi di integrità manuali o automatizzati (come gli hash crittografici) per verificare l'integrità del software dei componenti e delle informazioni di configurazione, nonché la registrazione e la segnalazione dei risultati di tali verifiche, direttamente o tramite integrazione in un sistema. Indicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto tramite integrazione nel sistema\nc. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.4 RE(1)",
+  "section": "FR 3",
+  "name": "Authenticity of software and information",
+  "description": "I componenti devono fornire la capacità di eseguire o supportare controlli di autenticità su software, configurazione e altre informazioni, nonché la registrazione e la segnalazione dei risultati di tali controlli, oppure essere integrati in un sistema in grado di eseguire o supportare controlli di autenticità.",
+  "validation": "Verificare che la documentazione utente descriva i meccanismi di autenticazione manuali o automatizzati (come le firme digitali) per autenticare l'origine del software dei componenti e delle informazioni di configurazione, nonché la registrazione e la segnalazione dei risultati di tali verifiche. Indicare una delle seguenti opzioni:\na. Soddisfatto dal componente\nb. Soddisfatto dall'integrazione nel sistema\nc. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.4 RE(2)",
+  "section": "FR 3",
+  "name": "Automated notification of integrity violations",
+  "description": "Se il componente esegue il controllo di integrità, deve essere in grado di inviare automaticamente una notifica a un'entità configurabile in caso di rilevamento di un tentativo di apportare una modifica non autorizzata.",
+  "validation": "Se il componente supporta direttamente la funzionalità descritta in FSA-CR 3.4, verificare che fornisca metodi automatizzati per verificare l'integrità del software e della configurazione e per inviare notifiche automatiche a un'entità configurabile. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe il componente non supporta direttamente la funzionalità descritta in FSA-CR 3.4, indicare:\nc. Non pertinente",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.5",
+  "section": "FR 3",
+  "name": "Input validation",
+  "description": "I componenti devono convalidare la sintassi, la lunghezza e il contenuto di qualsiasi dato di input utilizzato come input per il controllo di processi industriali o come input tramite interfacce esterne che influisca direttamente sul funzionamento del componente.",
+  "validation": "Nessuna attività di validazione per l'elemento di certificazione FSA.\n\nQuesto requisito è coperto dall'elemento di certificazione SDA, tramite le validazioni per i requisiti SVV-1 e SI-2 della norma IEC 62443-4-1, definiti nel documento ISASecure SDLA-312 come requisiti SDLA-SVV-1C e SDLA-SI-2E.",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.6",
+  "section": "FR 3",
+  "name": "Deterministic output",
+  "description": "I componenti che si connettono fisicamente o logicamente a un processo di automazione devono essere in grado di impostare le uscite su uno stato predeterminato qualora non sia possibile mantenere il normale funzionamento, come definito dal fornitore del componente.",
+  "validation": "Esaminare la documentazione utente e determinare se il componente può connettersi fisicamente o logicamente a un processo di automazione.\n\nSe il componente può connettersi fisicamente o logicamente a un processo di automazione, esaminare la documentazione utente e verificare che il componente imposti gli output di un processo di automazione a uno stato predeterminato qualora non sia possibile mantenere il normale funzionamento. Registrare una delle seguenti opzioni:\na. Requisito soddisfatto\nb. Requisito non soddisfatto\n\nSe il componente non può connettersi fisicamente o logicamente a un processo di automazione, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.7",
+  "section": "FR 3",
+  "name": "Error handling",
+  "description": "I componenti devono identificare e gestire le condizioni di errore in modo tale da non fornire informazioni che potrebbero essere sfruttate da avversari per attaccare l'IACS.",
+  "validation": "Il fornitore fornisce un elenco di tutti i messaggi di errore restituiti a un utente non amministratore. Verificare, per i campioni presenti in questo elenco, che i messaggi di errore del componente non rivelino informazioni sensibili che potrebbero essere sfruttate per attaccare il componente. Verificare che il fornitore abbia effettuato una revisione da parte di un esperto di sicurezza di tutti i messaggi di errore per individuare tali informazioni sfruttabili. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.8A",
+  "section": "FR 3",
+  "name": "Session integrity - invalidate session identifiers",
+  "description": "I componenti devono fornire meccanismi per proteggere l'integrità delle sessioni di comunicazione, inclusa la capacità di invalidare gli identificativi di sessione al momento del logout dell'utente o della terminazione della sessione per altri motivi (incluse le sessioni del browser).",
+  "validation": "Esaminare la documentazione utente e determinare se vengono utilizzate sessioni di comunicazione.\n\nSe vengono utilizzate sessioni di comunicazione, verificare che la documentazione di progettazione confermi che gli identificativi di sessione per le sessioni di comunicazione avviate da un utente vengano invalidati al momento del logout dell'utente o della terminazione della sessione per altri motivi. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non vengono utilizzate sessioni di comunicazione, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.8B",
+  "section": "FR 3",
+  "name": "Session integrity - generate and recognize session identifiers",
+  "description": "I componenti devono fornire meccanismi per proteggere l'integrità delle sessioni di comunicazione, inclusa la capacità di generare un identificatore di sessione univoco per ogni sessione e di riconoscere solo gli identificatori di sessione generati dal sistema.",
+  "validation": "Esaminare la documentazione utente e determinare se vengono utilizzate sessioni di comunicazione.\n\nSe vengono utilizzate sessioni di comunicazione, verificare che i documenti di progettazione indichino che il componente è in grado di generare identificatori di sessione univoci per ciascuna sessione e che gli ID di sessione non generati dal sistema vengano rifiutati. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non vengono utilizzate sessioni di comunicazione, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.8C",
+  "section": "FR 3",
+  "name": "Session integrity - random session identifiers",
+  "description": "I componenti devono fornire meccanismi per proteggere l'integrità delle sessioni di comunicazione, inclusa la capacità di generare identificatori di sessione univoci utilizzando fonti di casualità comunemente accettate.",
+  "validation": "Esaminare la documentazione utente e determinare se vengono utilizzate sessioni di comunicazione.\n\nSe vengono utilizzate sessioni di comunicazione, verificare che gli identificativi delle sessioni di comunicazione siano generati dal sistema con un livello di casualità accettabile. Annotare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe non vengono utilizzate sessioni di comunicazione, annotare:\nc. Non pertinente",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.9",
+  "section": "FR 3",
+  "name": "Protection of audit information",
+  "description": "I componenti devono proteggere le informazioni di audit, i registri di audit e gli strumenti di audit (se presenti) da accessi, modifiche ed eliminazioni non autorizzati.",
+  "validation": "Esaminare la documentazione dei componenti e verificare che le informazioni di audit e gli strumenti di audit (se presenti) richiedano l'autorizzazione per l'accesso, la modifica o l'eliminazione, per qualsiasi interfaccia tramite la quale siano accessibili. Tentare di eliminare un registro di audit come utente non autorizzato e verificare che l'accesso venga negato. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 3.9 RE(1)",
+  "section": "FR 3",
+  "name": "Audit records on write-once media",
+  "description": "I componenti devono fornire la capacità di memorizzare i registri di controllo su supporti di scrittura singola con vincolo hardware.",
+  "validation": "Esaminare la documentazione del componente e verificare che il componente sia in grado di produrre record di controllo su supporti con scrittura singola forzata dall'hardware. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 3.10",
+  "section": "FR 3",
+  "name": "Support for updates",
+  "description": "Il dispositivo integrato deve supportare la possibilità di essere aggiornato e potenziato.",
+  "validation": "Verificare, esaminando la documentazione di progettazione e la documentazione utente, che gli elementi del dispositivo embedded possano essere aggiornati e potenziati. Gli elementi tipici sono il software e il firmware. L'aggiornamento e il potenziamento sono definiti nella sottoclausola 3.1 della norma IEC 62443-4-2. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 3.10 RE(1)",
+  "section": "FR 3",
+  "name": "Update authenticity and integrity",
+  "description": "Il dispositivo integrato deve verificare l'autenticità e l'integrità di qualsiasi aggiornamento o upgrade del software prima dell'installazione.",
+  "validation": "Verificare che il componente fornisca misure per accertare, prima dell'installazione, che gli aggiornamenti e gli upgrade del software provengano dal fornitore.\n\nVerificare, nella documentazione di progettazione e per l'utente e tramite test, che il componente fornisca misure per rilevare le modifiche al software intervenute dopo la sua creazione da parte del fornitore e prima dell'installazione.\n\nUn possibile metodo per soddisfare questo requisito è la convalida delle firme digitali e degli hash crittografici.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.10",
+  "section": "FR 3",
+  "name": "Support for updates",
+  "description": "I dispositivi host devono supportare la possibilità di essere aggiornati e potenziati.",
+  "validation": "Verificare, esaminando la documentazione di progettazione e la documentazione utente, che gli elementi del dispositivo host possano essere aggiornati e potenziati. Gli elementi tipici sono il software e il firmware. L'aggiornamento e il potenziamento sono definiti nella sottoclausola 3.1 della norma IEC 62443-4-2. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.10 RE(1)",
+  "section": "FR 3",
+  "name": "Update authenticity and integrity",
+  "description": "I dispositivi host devono verificare l'autenticità e l'integrità di qualsiasi aggiornamento o upgrade del software prima dell'installazione.",
+  "validation": "Verificare che il componente fornisca misure per accertare, prima dell'installazione, che gli aggiornamenti e gli upgrade del software provengano dal fornitore.\n\nVerificare, nella documentazione di progettazione e per l'utente e tramite test, che il componente fornisca misure per rilevare le modifiche al software intervenute dopo la sua creazione da parte del fornitore e prima dell'installazione.\n\nUn possibile metodo per soddisfare questo requisito è la convalida delle firme digitali e degli hash crittografici.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.10",
+  "section": "FR 3",
+  "name": "Support for updates",
+  "description": "I dispositivi di rete devono essere in grado di supportare aggiornamenti e upgrade.",
+  "validation": "Verificare, esaminando la documentazione di progettazione e la documentazione utente, che gli elementi del dispositivo di rete possano essere aggiornati e potenziati. Gli elementi tipici sono il software e il firmware. L'aggiornamento e il potenziamento sono definiti nella sottoclausola 3.1 della norma IEC 62443-4-2. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 3.10 RE(1)",
+  "section": "FR 3",
+  "name": "Update authenticity and integrity",
+  "description": "I dispositivi di rete devono verificare l'autenticità e l'integrità di qualsiasi aggiornamento o upgrade del software prima dell'installazione.",
+  "validation": "Verificare che il componente fornisca misure per accertare, prima dell'installazione, che gli aggiornamenti e gli upgrade del software provengano dal fornitore.\n\nVerificare, nella documentazione di progettazione e per l'utente e tramite test, che il componente fornisca misure per rilevare le modifiche al software intervenute dopo la sua creazione da parte del fornitore e prima dell'installazione.\n\nUn possibile metodo per soddisfare questo requisito è la convalida delle firme digitali e degli hash crittografici.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 3.11",
+  "section": "FR 3",
+  "name": "Physical tamper resistance and detection",
+  "description": "Il dispositivo integrato deve fornire meccanismi di resistenza alla manomissione e di rilevamento per proteggere il dispositivo da accessi fisici non autorizzati.",
+  "validation": "Esaminare il modello di minaccia per il componente per verificare che elenchi le possibili minacce all'integrità e alla riservatezza del componente dovute all'accesso fisico. Verificare, per ciascuna di queste minacce, che siano dissuase da meccanismi fisici e che la loro attuazione crei prove di manomissione. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 3.11 RE(1)",
+  "section": "FR 3",
+  "name": "Notification of a tampering attempt",
+  "description": "Il dispositivo integrato deve essere in grado di inviare automaticamente una notifica a un insieme configurabile di destinatari in caso di rilevamento di un tentativo di accesso fisico non autorizzato. Tutte le notifiche di manomissione devono essere registrate come parte della funzione generale di registrazione degli eventi.",
+  "validation": "Verificare nel modello di minaccia che gli eventi ad alto rischio di accesso fisico non autorizzato siano mitigati dalla notifica automatica.\n\nVerificare che il componente offra la capacità di inviare automaticamente una notifica a un insieme configurabile di destinatari quando viene rilevato tale accesso e di creare un record di audit per questa notifica. I metodi che richiedono l'intervento umano per il rilevamento o la notifica (come ad esempio una persona che nota un nastro di sicurezza manomesso) non soddisfano questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.11",
+  "section": "FR 3",
+  "name": "Physical tamper resistance and detection",
+  "description": "I dispositivi host devono fornire la capacità di supportare meccanismi di resistenza e rilevamento delle manomissioni per proteggere dall'accesso fisico non autorizzato al dispositivo.",
+  "validation": "Esaminare il modello di minaccia per il componente per verificare che elenchi le possibili minacce all'integrità e alla riservatezza del componente dovute all'accesso fisico. Verificare, per ciascuna di queste minacce, che siano dissuase da meccanismi fisici supportati dal componente e che il componente supporti un meccanismo tale che l'attuazione della minaccia crei prove di manomissione. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.11 RE(1)",
+  "section": "FR 3",
+  "name": "Notification of a tampering attempt",
+  "description": "I dispositivi host devono essere in grado di inviare automaticamente una notifica a un insieme configurabile di destinatari in caso di rilevamento di un tentativo di accesso fisico non autorizzato. Tutte le notifiche di manomissione devono essere registrate come parte della funzione generale di registrazione degli eventi di controllo.",
+  "validation": "Verificare nel modello di minaccia che gli eventi ad alto rischio di accesso fisico non autorizzato siano mitigati dalla notifica automatica.\n\nVerificare che il componente offra la capacità di inviare automaticamente una notifica a un insieme configurabile di destinatari quando viene rilevato tale accesso e di creare un record di audit per questa notifica. I metodi che richiedono l'intervento umano per il rilevamento o la notifica (ad esempio, una persona che nota un nastro di sicurezza manomesso) non soddisfano questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.11",
+  "section": "FR 3",
+  "name": "Physical tamper resistance and detection",
+  "description": "I dispositivi di rete devono essere dotati di meccanismi di resistenza e rilevamento delle manomissioni per proteggere il dispositivo dall'accesso fisico non autorizzato.",
+  "validation": "Esaminare il modello di minaccia per il componente per verificare che elenchi le possibili minacce all'integrità e alla riservatezza del componente dovute all'accesso fisico. Verificare, per ciascuna di queste minacce, che siano dissuase da meccanismi fisici e che l'attuazione della minaccia crei prove di manomissione. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 3.11 RE(1)",
+  "section": "FR 3",
+  "name": "Notification of a tampering attempt",
+  "description": "I dispositivi di rete devono essere in grado di inviare automaticamente una notifica a un insieme configurabile di destinatari in caso di rilevamento di un tentativo di accesso fisico non autorizzato. Tutte le notifiche di manomissione devono essere registrate come parte della funzione generale di registrazione degli eventi di controllo.",
+  "validation": "Verificare nel modello di minaccia che gli eventi ad alto rischio di accesso fisico non autorizzato siano mitigati dalla notifica automatica.\n\nVerificare che il componente offra la capacità di inviare automaticamente una notifica a un insieme configurabile di destinatari quando viene rilevato tale accesso e di creare un record di audit per questa notifica. I metodi che richiedono l'intervento umano per il rilevamento o la notifica (ad esempio, una persona che nota un nastro di sicurezza manomesso) non soddisfano questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 3.12",
+  "section": "FR 3",
+  "name": "Provisioning product supplier roots of trust - protection",
+  "description": "I dispositivi integrati devono essere in grado di garantire e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del fornitore del prodotto da utilizzare come una o più \"radici di fiducia\" al momento della fabbricazione del dispositivo.",
+  "validation": "Esaminare la documentazione del fornitore relativa alla progettazione e al processo di produzione dei componenti per verificare che, durante il processo di creazione di eventuali radici di fiducia per il dispositivo e successivamente, le chiavi e i dati del fornitore del prodotto da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale da non poter essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia al momento della produzione del dispositivo e durante il suo utilizzo successivo, e che tali minacce siano state mitigate. L'utilizzo di un archivio affidabile o di una zona affidabile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.12",
+  "section": "FR 3",
+  "name": "Provisioning product supplier roots of trust - protection",
+  "description": "I dispositivi host devono essere in grado di fornire la capacità di garantire e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del fornitore del prodotto da utilizzare come una o più \"radici di fiducia\" al momento della fabbricazione del dispositivo.",
+  "validation": "Esaminare la documentazione del fornitore relativa alla progettazione e al processo di produzione dei componenti per verificare che, durante il processo di creazione di eventuali radici di fiducia per il dispositivo e successivamente, le chiavi e i dati del fornitore del prodotto da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale da non poter essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia al momento della produzione del dispositivo e durante il suo utilizzo successivo, e che tali minacce siano state mitigate. L'utilizzo di un archivio affidabile o di una zona affidabile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.12",
+  "section": "FR 3",
+  "name": "Provisioning product supplier roots of trust - protection",
+  "description": "I dispositivi di rete devono essere in grado di garantire e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del fornitore del prodotto da utilizzare come una o più \"radici di fiducia\" al momento della fabbricazione del dispositivo.",
+  "validation": "Esaminare la documentazione del fornitore relativa alla progettazione e al processo di produzione dei componenti per verificare che, durante il processo di creazione di eventuali radici di fiducia per il dispositivo e successivamente, le chiavi e i dati del fornitore del prodotto da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale da non poter essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia al momento della produzione del dispositivo e durante il suo utilizzo successivo, e che tali minacce siano state mitigate. L'utilizzo di un archivio affidabile o di una zona affidabile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 3.13A",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - protection",
+  "description": "I dispositivi integrati devono essere in grado di garantire e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del proprietario delle risorse da utilizzare come \"radici di fiducia\".",
+  "validation": "Esaminare la documentazione utente per verificare che, dopo che un proprietario di una risorsa si è assunto la responsabilità di un dispositivo, esista un processo che gli consenta di creare e utilizzare le radici di fiducia per il dispositivo. Verificare nella documentazione di progettazione che le chiavi e i dati del proprietario della risorsa da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale che non possano essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia del proprietario della risorsa e che tali minacce siano state mitigate. L'utilizzo di un archivio attendibile o di una zona attendibile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 3.13B",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - inside zone",
+  "description": "I dispositivi embedded devono essere in grado di effettuare il provisioning senza dipendere da componenti che potrebbero trovarsi al di fuori della zona di sicurezza del dispositivo.",
+  "validation": "Esaminare la documentazione utente e di progettazione per verificare che il processo del componente per il provisioning delle radici di fiducia del proprietario dell'asset possa essere eseguito all'interno della zona di sicurezza del componente. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.13A",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - protection",
+  "description": "I dispositivi host devono fornire la capacità di predisporre e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del proprietario delle risorse da utilizzare come \"radici di fiducia\".",
+  "validation": "Esaminare la documentazione utente per verificare che, dopo che un proprietario di una risorsa si è assunto la responsabilità di un dispositivo, esista un processo che gli consenta di creare e utilizzare le radici di fiducia per il dispositivo. Verificare nella documentazione di progettazione che le chiavi e i dati del proprietario della risorsa da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale che non possano essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia del proprietario della risorsa e che tali minacce siano state mitigate. L'utilizzo di un archivio attendibile o di una zona attendibile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.13B",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - inside zone",
+  "description": "I dispositivi host devono supportare la capacità di effettuare il provisioning senza dipendere da componenti che potrebbero trovarsi al di fuori della zona di sicurezza del dispositivo.",
+  "validation": "Esaminare la documentazione utente e di progettazione per verificare che il processo del componente per il provisioning delle radici di fiducia del proprietario dell'asset possa essere eseguito all'interno della zona di sicurezza del componente. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.13A",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - protection",
+  "description": "I dispositivi di rete devono essere in grado di garantire e proteggere la riservatezza, l'integrità e l'autenticità delle chiavi e dei dati del proprietario delle risorse da utilizzare come \"radici di fiducia\".",
+  "validation": "Esaminare la documentazione utente per verificare che, dopo che un proprietario di una risorsa si è assunto la responsabilità di un dispositivo, esista un processo che gli consenta di creare e utilizzare le radici di fiducia per il dispositivo. Verificare nella documentazione di progettazione che le chiavi e i dati del proprietario della risorsa da utilizzare come radici di fiducia siano gestiti all'interno del dispositivo in modo tale che non possano essere accessibili in alcun modo diverso dalle funzioni del dispositivo che richiedono l'utilizzo di tali informazioni. Verificare che il modello di minaccia analizzi le minacce alla riservatezza, all'integrità e all'autenticità delle radici di fiducia del proprietario della risorsa e che tali minacce siano state mitigate. L'utilizzo di un archivio attendibile o di una zona attendibile sono esempi di metodi per soddisfare questo requisito. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 3.13B",
+  "section": "FR 3",
+  "name": "Provisioning asset owner roots of trust - inside zone",
+  "description": "I dispositivi di rete devono essere in grado di effettuare il provisioning senza dipendere da componenti che potrebbero trovarsi al di fuori della zona di sicurezza del dispositivo.",
+  "validation": "Esaminare la documentazione utente e di progettazione per verificare che il processo del componente per il provisioning delle radici di fiducia del proprietario dell'asset possa essere eseguito all'interno della zona di sicurezza del componente. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-EDR 3.14",
+  "section": "FR 3",
+  "name": "Integrity of the boot process",
+  "description": "I dispositivi embedded devono verificare l'integrità del firmware, del software e dei dati di configurazione necessari per i processi di avvio e di esecuzione del componente prima dell'utilizzo.",
+  "validation": "Verificare nella documentazione di progettazione e tramite test che il componente fornisca misure per verificare, durante il processo di avvio, che tutti i dati relativi a firmware, software e configurazione necessari per il processo di avvio o di esecuzione non siano stati modificati tra un momento precedente in cui si presumeva fossero affidabili e ogni volta che vengono utilizzati per il processo di avvio o di esecuzione. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-EDR 3.14 RE(1)",
+  "section": "FR 3",
+  "name": "Authenticity of the boot process",
+  "description": "I dispositivi embedded devono utilizzare le radici di fiducia del fornitore del prodotto del componente per verificare l'autenticità del firmware, del software e dei dati di configurazione necessari per il processo di avvio del componente prima che vengano utilizzati in tale processo.",
+  "validation": "Verificare nella progettazione e nella documentazione utente, e tramite test, che il componente utilizzi radici di fiducia del fornitore per verificare, durante il processo di avvio, che tutto il firmware, il software e i dati di configurazione necessari per l'avvio provengano dal fornitore. Un possibile metodo è la convalida delle firme digitali e degli hash crittografici. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.14",
+  "section": "FR 3",
+  "name": "Integrity of the boot process",
+  "description": "I dispositivi host devono verificare l'integrità del firmware, del software e dei dati di configurazione necessari per il processo di avvio del componente prima che quest'ultimo venga utilizzato nel processo di avvio.",
+  "validation": "Verificare nella documentazione di progettazione e tramite test che il componente fornisca misure per verificare, durante il processo di avvio, che tutti i dati relativi a firmware, software e configurazione necessari per il processo di avvio non siano stati modificati tra un momento precedente in cui si presumeva fossero affidabili e ogni volta che vengono utilizzati per il processo di avvio. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-HDR 3.14 RE(1)",
+  "section": "FR 3",
+  "name": "Authenticity of the boot process",
+  "description": "I dispositivi host devono utilizzare le radici di fiducia del fornitore del prodotto del componente per verificare l'autenticità del firmware, del software e dei dati di configurazione necessari per il processo di avvio del componente prima che vengano utilizzati in tale processo.",
+  "validation": "Verificare nella progettazione e nella documentazione utente, e tramite test, che il componente utilizzi radici di fiducia del fornitore per verificare, durante il processo di avvio, che tutto il firmware, il software e i dati di configurazione necessari per l'avvio provengano dal fornitore. Un possibile metodo è la convalida delle firme digitali e degli hash crittografici. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": true,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-NDR 3.14",
+  "section": "FR 3",
+  "name": "Integrity of the boot process",
+  "description": "I dispositivi di rete devono verificare l'integrità del firmware, del software e dei dati di configurazione necessari per il processo di avvio del componente prima che quest'ultimo venga utilizzato nel processo di avvio.",
+  "validation": "Verificare nella documentazione di progettazione e tramite test che il componente fornisca misure per verificare, durante il processo di avvio, che tutti i dati relativi a firmware, software e configurazione necessari per il processo di avvio non siano stati modificati tra un momento precedente in cui si presumeva fossero affidabili e ogni volta che vengono utilizzati per il processo di avvio. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 3.14 RE(1)",
+  "section": "FR 3",
+  "name": "Authenticity of the boot process",
+  "description": "I dispositivi di rete devono utilizzare le radici di fiducia del fornitore del prodotto del componente per verificare l'autenticità del firmware, del software e dei dati di configurazione necessari per il processo di avvio del componente prima che vengano utilizzati in tale processo.",
+  "validation": "Verificare nella progettazione e nella documentazione utente, e tramite test, che il componente utilizzi radici di fiducia del fornitore per verificare, durante il processo di avvio, che tutto il firmware, il software e i dati di configurazione necessari per l'avvio provengano dal fornitore. Un possibile metodo è la convalida delle firme digitali e degli hash crittografici. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.1A",
+  "section": "FR 4",
+  "name": "Information confidentiality - at rest",
+  "description": "I componenti devono fornire la capacità di proteggere la riservatezza delle informazioni a riposo per le quali è supportata l'autorizzazione esplicita alla lettura.",
+  "validation": "Identificare tutte le informazioni a riposo per le quali è supportata un'autorizzazione di lettura esplicita. Esaminare la documentazione di progettazione e verificare che tutte queste informazioni includano metodi per proteggere la riservatezza, come la crittografia dei dati o la limitazione dell'accesso degli utenti alla posizione in cui i dati sono archiviati. Se l'utente deve configurare o impostare il componente in un determinato modo per soddisfare questo requisito, verificare che ciò sia chiaramente documentato in un manuale utente. Tentare di accedere a un campione di informazioni riservate per verificare che non siano accessibili agli utenti senza la dovuta autorizzazione.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.1B",
+  "section": "FR 4",
+  "name": "Information confidentiality - in transit",
+  "description": "I componenti devono supportare la protezione della riservatezza delle informazioni in transito come definito nella norma IEC 62443‑3‑3 [11] SR 4.1.",
+  "validation": "Identificare tutte le informazioni in transito attraverso i confini esterni del componente per le quali è supportata l'autorizzazione di lettura esplicita. Esaminare la documentazione di progettazione e verificare che tutte queste informazioni includano metodi per proteggere la riservatezza, come la crittografia dei dati o la limitazione dell'accesso dell'utente al supporto fisico utilizzato per la trasmissione. Se l'utente deve configurare o impostare il componente in un determinato modo per soddisfare questo requisito, verificare che ciò sia chiaramente documentato in un manuale utente. Se un utente può accedere a un supporto fisico utilizzato per la trasmissione, verificare tramite test che non siano visibili informazioni riservate sul supporto di trasmissione utilizzando uno strumento di intercettazione come Wireshark per visualizzare un campione delle comunicazioni mentre il sistema esegue le sue normali operazioni. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.2",
+  "section": "FR 4",
+  "name": "Information persistence",
+  "description": "I componenti devono fornire la capacità di cancellare tutte le informazioni per le quali è supportata l'autorizzazione di lettura esplicita, dai componenti da rilasciare dal servizio attivo e/o dismettere.",
+  "validation": "Esaminare la documentazione del componente e verificare che il componente sia in grado di eliminare tutte le informazioni per le quali è supportata l'autorizzazione di lettura esplicita. Verificare che i dati vengano eliminati dal componente in modo tale da non poter essere ricreati. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.2 RE(1)",
+  "section": "FR 4",
+  "name": "Erase of shared memory resources",
+  "description": "I componenti devono garantire la capacità di proteggere dal trasferimento non autorizzato e involontario di informazioni tramite risorse di memoria condivisa volatile.",
+  "validation": "Verificare, consultando la documentazione del componente, se quest'ultimo può avere più di un utente e se è possibile memorizzare informazioni riservate nella memoria volatile. Se entrambe le affermazioni sono vere, esaminare la documentazione di progettazione del componente e verificare che le informazioni riservate vengano eliminate dalla RAM prima che tale memoria venga rilasciata al componente per l'utilizzo da parte di un altro utente. Esaminare la documentazione di progettazione del componente e verificare che le informazioni riservate non siano memorizzate in memoria accessibile da utenti non autorizzati di alcun tipo (persone, dispositivi, applicazioni software). Indicare una delle seguenti opzioni:\na. Conforme\nb. Non conforme\nc. Non pertinente, se il componente ha un solo utente o se non vengono memorizzate informazioni riservate nella memoria volatile\n\nPer informazioni riservate si intendono le informazioni per le quali la sicurezza del componente dipende dalla protezione della riservatezza di tali dati da parte di alcuni o tutti gli utenti, oppure per le quali l'utente può configurare/personalizzare un'autorizzazione di lettura esplicita.",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.2 RE(2)",
+  "section": "FR 4",
+  "name": "Erase verification",
+  "description": "I componenti devono fornire la capacità di verificare che la cancellazione delle informazioni sia avvenuta.",
+  "validation": "Esaminare la documentazione del componente e verificare che il componente disponga della capacità di verificare che le informazioni siano state eliminate definitivamente, come definito nel requisito base CR-4.2. Eseguire un test seguendo la procedura raccomandata per l'eliminazione definitiva delle informazioni dal componente ed eseguire il metodo di verifica documentato per accertare che le informazioni siano state effettivamente eliminate. Eseguire un ulteriore test applicando il metodo di verifica documentato su un sistema in cui le informazioni non sono state eliminate definitivamente, al fine di garantire che il metodo rilevi eventuali errori di eliminazione.\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 4.3",
+  "section": "FR 4",
+  "name": "Use of cryptography",
+  "description": "Uso della crittografia",
+  "validation": "Verificare, tramite la documentazione di progettazione, che se il componente utilizza la crittografia, gli algoritmi, le dimensioni delle chiavi e i meccanismi per la loro creazione siano conformi alle migliori pratiche e raccomandazioni del settore, come definite nello standard ICSA-500, nello standard NIST SP 800-57 o in pubblicazioni simili.\n\na. Soddisfatto dal componente\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 5.1",
+  "section": "FR 5",
+  "name": "Network segmentation",
+  "description": "I componenti devono supportare una rete segmentata per supportare zone e condotti, secondo necessità, a supporto dell'architettura di rete più ampia basata sulla segmentazione logica e sulla criticità.",
+  "validation": "Verificare che il dispositivo supporti una tecnologia di rete segmentabile. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 5.2",
+  "section": "FR 5",
+  "name": "Zone boundary protection",
+  "description": "Un dispositivo di rete posto al confine di una zona deve essere in grado di monitorare e controllare le comunicazioni ai confini di zona per garantire la compartimentazione definita nel modello di zone e condotti basato sul rischio.",
+  "validation": "A meno che il fornitore non abbia documentato che un dispositivo di rete non è destinato all'uso al confine di zona, verificare che il dispositivo di rete sia in grado di ispezionare il traffico di rete che lo attraversa, determinando se il dispositivo di rete intraprende azioni per controllarlo. Esempi di azioni di controllo supportate possono includere il reindirizzamento o l'eliminazione del traffico. Ad esempio, un firewall o un router soddisfano questo requisito. Verificare inoltre che l'esecuzione delle azioni di controllo sul traffico di rete venga registrata in un log.\n\nRegistrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nSe il fornitore ha documentato che un dispositivo di rete non è destinato all'uso al confine di zona, registrare:\nc. Non pertinente",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 5.2 RE(1)",
+  "section": "FR 5",
+  "name": "Deny all, permit by exception",
+  "description": "Il componente di rete deve fornire la capacità di negare il traffico di rete per impostazione predefinita e di consentirlo solo in caso di eccezione (anche detta nega tutto, consenti solo in caso di eccezione).",
+  "validation": "Verificare che la documentazione utente indichi la possibilità di negare per impostazione predefinita tutto il traffico di rete attraverso il dispositivo di rete e di consentirlo solo in caso di eccezione. Indicare una delle seguenti opzioni:\na. Soddisfatta\nb. Non soddisfatta",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 5.2 RE(2)",
+  "section": "FR 5",
+  "name": "Island mode",
+  "description": "Il componente di rete deve fornire la capacità di proteggere da qualsiasi comunicazione attraverso il confine del sistema di controllo (anche detta modalità isola).",
+  "validation": "Verificare nella documentazione utente e tramite test che il dispositivo di rete sia in grado di essere impostato in una modalità che blocchi tutto il traffico che lo attraversa. Indicare una delle seguenti opzioni:\na. Condizione soddisfatta\nb. Condizione non soddisfatta",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 5.2 RE(3)",
+  "section": "FR 5",
+  "name": "Fail close",
+  "description": "Il componente di rete deve fornire la capacità di proteggere da qualsiasi comunicazione attraverso il confine del sistema di controllo in caso di guasto operativo dei meccanismi di protezione del confine (detto anche \"fail close\").",
+  "validation": "Verificare nella documentazione utente e tramite test che il dispositivo di rete sia in grado di bloccare tutto il traffico che lo attraversa in caso di malfunzionamento dei meccanismi di protezione perimetrale. Esempi di malfunzionamenti per i quali questa funzionalità può essere prevista sono interruzioni di corrente, guasti software e guasti hardware.\n\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-NDR 5.3",
+  "section": "FR 5",
+  "name": "General purpose, person-to-person communication restrictions",
+  "description": "Un dispositivo di rete al confine di una zona deve essere in grado di proteggere dalla ricezione di messaggi generici da persona a persona provenienti da utenti o sistemi esterni al sistema di controllo.",
+  "validation": "Verificare nella documentazione utente che il dispositivo di rete sia in grado di bloccare tutti i tipi di messaggi di uso generale, da persona a persona. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 5.4",
+  "section": "FR 5",
+  "name": "Application partitioning",
+  "description": "Non esiste alcun requisito a livello di componente associato alla norma IEC 62443‑3‑3 SR 5.4.",
+  "validation": "Nessuna attività di convalida",
+  "csl": [],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CR 6.1",
+  "section": "FR 6",
+  "name": "Audit log accessibility",
+  "description": "I componenti devono fornire la possibilità a persone e/o strumenti autorizzati di accedere ai registri di controllo in sola lettura.",
+  "validation": "Verificare che il componente fornisca un mezzo per consentire a persone autorizzate e/o strumenti esterni autorizzati di accedere ai log di controllo in sola lettura. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 6.1 RE(1)",
+  "section": "FR 6",
+  "name": "Programmatic access to audit logs",
+  "description": "I componenti devono fornire accesso programmatico ai record di audit tramite un'interfaccia di programmazione delle applicazioni (API) o inviando i record di audit a un sistema centralizzato.",
+  "validation": "Verificare nella documentazione utente o di progettazione che il componente fornisca accesso programmatico ai record di audit tramite un'interfaccia di programmazione delle applicazioni (API) o inviando i record di audit a un sistema centralizzato. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 6.2",
+  "section": "FR 6",
+  "name": "Continuous monitoring",
+  "description": "I componenti devono essere in grado di fornire la capacità di essere monitorati in modo continuo utilizzando pratiche e raccomandazioni comunemente accettate nel settore della sicurezza per rilevare, caratterizzare e segnalare tempestivamente le violazioni della sicurezza.",
+  "validation": "Verificare che il fornitore abbia scelto una risorsa di settore che fornisca raccomandazioni sugli eventi da monitorare per identificare le violazioni della sicurezza del componente. Verificare che il componente sia in grado di monitorare tali eventi. Ad esempio, tentativi di autorizzazione e controllo degli accessi non riusciti, convalida degli input non riuscita e transazioni di valore elevato sono identificati nella risorsa OWASP Top 10. Verificare che il monitoraggio possa essere effettuato in modo continuo e che il componente sia in grado di segnalare gli eventi entro un intervallo di tempo tale da consentire la mitigazione di una possibile violazione della sicurezza associata all'evento. Verificare che gli eventi vengano segnalati con contenuto e formato utilizzabili da una soluzione di analisi centralizzata. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.1",
+  "section": "FR 7",
+  "name": "Denial of service protection",
+  "description": "I componenti devono essere in grado di mantenere le funzioni essenziali anche quando operano in modalità degradata a seguito di un evento DoS.",
+  "validation": "Se il componente ha funzioni essenziali, verificare che il modello di minaccia per il componente identifichi le minacce DoS e le relative misure di mitigazione utilizzando un metodo di analisi sistematico. Verificare che il fornitore disponga di casi di test che dimostrino che il componente mantiene le funzioni essenziali in caso di attacco DoS. Verificare che tali test siano stati superati. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\nc. Non pertinente, se il componente non ha funzioni essenziali",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.1 RE(1)",
+  "section": "FR 7",
+  "name": "Manage communication load from component",
+  "description": "I componenti devono fornire la capacità di mitigare gli effetti degli eventi DoS di tipo flooding di informazioni e/o messaggi.",
+  "validation": "Verificare che il modello di minaccia per il componente identifichi eventi DoS di tipo flooding di informazioni e/o messaggi. Verificare che il modello di minaccia indichi la capacità di mitigare gli effetti di tali minacce. Verificare che il fornitore disponga di casi di test superati per queste mitigazioni, come richiesto dal requisito SVV-2 della norma IEC 62443-4-1. (Questo esame dei casi di test può essere effettuato nell'ambito dell'attività di convalida nell'elemento SDA-C della certificazione, per il requisito SDLA-SVV-2-1 in SDLA-312).\n\nVerificare che il requisito SDLA-SVV-3A4 di SDLA-312 nell'elemento SDA-C della certificazione sia stato superato. Questo requisito include la verifica dei test in condizioni di carico di traffico di rete.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.2",
+  "section": "FR 7",
+  "name": "Resource management",
+  "description": "I componenti devono fornire la capacità di limitare l'utilizzo delle risorse da parte delle funzioni di sicurezza per proteggere dall'esaurimento delle risorse.",
+  "validation": "Verificare, utilizzando la documentazione di progettazione, che l'utilizzo delle funzioni di sicurezza fornite dal componente per soddisfare lo standard IEC 62443-4-2 sia limitato in modo tale che un utilizzo elevato di tali funzioni non interferisca con le altre funzioni del componente. Esempi includono, a titolo esemplificativo ma non esaustivo: elevati tassi di tentativi di autenticazione utente (eventualmente falliti), elevati tassi di registrazione degli eventi di controllo, elevati tassi di dati in entrata che richiedono la verifica dell'autenticità o dati in uscita che richiedono la protezione dell'integrità, serie di attacchi fisici che attivano una serie di notifiche automatiche. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.3",
+  "section": "FR 7",
+  "name": "Control system backup",
+  "description": "I componenti devono essere in grado di partecipare alle operazioni di backup a livello di sistema al fine di salvaguardare lo stato del componente (informazioni a livello utente e di sistema). Il processo di backup non deve influire sul normale funzionamento del componente.",
+  "validation": "Verificare che il fornitore disponga di casi di test che dimostrino che il componente è in grado di fornire informazioni sullo stato e sull'utente del componente nell'ambito di un'operazione di backup a livello di sistema, senza interferire con il normale funzionamento del componente. Verificare questa funzionalità nella documentazione utente.\n\nIndicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.3 RE(1)",
+  "section": "FR 7",
+  "name": "Backup integrity verification",
+  "description": "I componenti devono fornire la capacità di convalidare l'integrità delle informazioni di cui è stato eseguito il backup prima di avviare il ripristino di tali informazioni.",
+  "validation": "Verificare nella documentazione utente che il componente offra la possibilità di convalidare l'integrità delle informazioni di backup prima di avviare il ripristino di tali informazioni. Verificare tramite test, eliminando e modificando i dati nelle informazioni di backup associate a un evento. Tentare di eseguire il ripristino e verificare che un eventuale problema venga segnalato all'utente prima dell'avvio del ripristino del componente. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.4",
+  "section": "FR 7",
+  "name": "Control system recovery and reconstitution",
+  "description": "I componenti devono essere in grado di essere recuperati e ricostituiti in uno stato sicuro noto dopo un'interruzione o un guasto.",
+  "validation": "Verificare nella documentazione utente che sia descritta una procedura per ripristinare un componente guasto o sospettamente difettoso a uno stato sicuro noto. Verificare che lo stato previsto sia descritto nella documentazione utente. Eseguire la procedura e verificare che raggiunga lo stato documentato. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.5",
+  "section": "FR 7",
+  "name": "Emergency power",
+  "description": "Non esiste alcun requisito a livello di componente associato alla norma IEC 62443‑3‑3 SR 7.5.",
+  "validation": "Nessuna attività di convalida",
+  "csl": [],
+  "components": {
+   "softwareApplication": false,
+   "embeddedDevice": false,
+   "hostDevice": false,
+   "networkDevice": false
+  }
+ },
+ {
+  "id": "FSA-CR 7.6",
+  "section": "FR 7",
+  "name": "Network and security configuration settings",
+  "description": "I componenti devono essere configurabili in base alle configurazioni di rete e di sicurezza raccomandate, come descritto nelle linee guida fornite dal fornitore del sistema di controllo. Il componente deve inoltre fornire un'interfaccia per le impostazioni di configurazione di rete e di sicurezza attualmente in uso.",
+  "validation": "L'elemento di certificazione SDA-C, ai sensi dei requisiti SDLA-SG-3A e SDLA-SG-3D del documento SDLA-312, richiede rispettivamente linee guida per il rafforzamento della sicurezza e la configurazione della sicurezza.\n\nSe la valutazione per SDLA-SG-3A è stata superata, verificare tramite test che l'utente possa visualizzare le impostazioni di configurazione di rete attualmente implementate attraverso un'interfaccia del componente. Verificare che il componente possa essere configurato tramite un'interfaccia per modificare tali impostazioni e, in particolare, per soddisfare le eventuali linee guida di configurazione di rete presenti nelle linee guida che soddisfano il requisito SDLA-SG-3A.\n\nSe la valutazione per SDLA-SG-3D è stata superata, verificare tramite test che l'utente possa visualizzare le impostazioni descritte nelle linee guida che soddisfano tale requisito, tramite un'interfaccia del componente. Modificare le impostazioni che non sono conformi alle impostazioni consigliate. Visualizzare e verificare le modifiche apportate alla configurazione risultante tramite l'interfaccia fornita. Registrare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto\n\nSe le valutazioni per uno dei requisiti SDLA-SG-3A e SDLA-SG-3D nell'elemento SDA-C della certificazione non sono state superate, registrare:\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.6 RE(1)",
+  "section": "FR 7",
+  "name": "Machine-readable reporting of current security settings",
+  "description": "I componenti devono fornire la capacità di generare un report che elenchi le impostazioni di sicurezza attualmente implementate in un formato leggibile da una macchina.",
+  "validation": "Verificare che sia possibile generare un report che elenchi le impostazioni di sicurezza attualmente implementate in un formato leggibile dalla macchina, generando e leggendo questo report. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.7",
+  "section": "FR 7",
+  "name": "Least functionality",
+  "description": "I componenti devono fornire la capacità di limitare in modo specifico l'utilizzo di funzioni, porte, protocolli e/o servizi non necessari.",
+  "validation": "Verificare che la documentazione utente specifichi le porte e i protocolli richiesti e fornisca indicazioni su come vietare e/o limitare l'uso di funzioni, porte, protocolli e/o altri servizi non necessari. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ },
+ {
+  "id": "FSA-CR 7.8",
+  "section": "FR 7",
+  "name": "Control system component inventory",
+  "description": "I componenti devono fornire la capacità di supportare un inventario dei componenti del sistema di controllo secondo IEC 62443‑3‑3 [11] SR 7.8.",
+  "validation": "Verificare che il componente offra la capacità di identificare la propria presenza e le relative proprietà per un inventario dei componenti di un sistema di controllo. Indicare una delle seguenti opzioni:\na. Soddisfatto\nb. Non soddisfatto",
+  "csl": [
+   2,
+   3,
+   4
+  ],
+  "components": {
+   "softwareApplication": true,
+   "embeddedDevice": true,
+   "hostDevice": true,
+   "networkDevice": true
+  }
+ }
+]

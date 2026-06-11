@@ -37,14 +37,19 @@ const styles = {
 const ThreatModelPreview: FC = () => {
   const { dataKey } = useParams();
 
-  const data = useMemo(() => {
+  const { data, reportType } = useMemo(() => {
     const dataStr = dataKey && window.localStorage.getItem(dataKey);
 
     if (dataStr) {
-      return JSON.parse(dataStr);
+      const parsed = JSON.parse(dataStr);
+      // payload moderno { reportType, data }; in passato veniva salvato direttamente il workspace
+      if (parsed && typeof parsed === 'object' && 'reportType' in parsed && 'data' in parsed) {
+        return { data: parsed.data, reportType: parsed.reportType };
+      }
+      return { data: parsed, reportType: 'full' as const };
     }
 
-    return undefined;
+    return { data: undefined, reportType: 'full' as const };
   }, []);
 
   useEffect(() => {
@@ -55,7 +60,7 @@ const ThreatModelPreview: FC = () => {
 
   return (<div css={styles.container}>
     <Container>
-      {data ? <ThreatModelView composerMode='Full' data={data} isPreview /> : <div>No content</div>}
+      {data ? <ThreatModelView composerMode='Full' data={data} reportType={reportType} isPreview /> : <div>No content</div>}
     </Container>
   </div>);
 };

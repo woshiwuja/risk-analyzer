@@ -33,6 +33,12 @@ import {
   ROUTE_WORKSPACE_PATH,
   ROUTE_PREVIEW_PATH,
   ROUTE_BRAINSTORM_PATH,
+  ROUTE_IEC62443_PATH,
+  ROUTE_IEC62443_4_2_PATH,
+  ROUTE_VULNERABILITY_ASSESSMENT_PATH,
+  ROUTE_VIEW_THREAT_MODEL_EXECUTIVE_PATH,
+  ROUTE_VIEW_THREAT_MODEL_OPERATIONAL_PATH,
+  ROUTE_VIEW_THREAT_MODEL_INTERNAL_PATH,
 } from '../config/routes';
 import isMemoryRouterUsed from '../utils/isMemoryRouterUsed';
 
@@ -44,6 +50,9 @@ const Architecture = React.lazy(() => import('../containers/Architecture'));
 const Application = React.lazy(() => import('../containers/Application'));
 const BrainstormBoard = React.lazy(() => import('../containers/BrainstormBoard'));
 const Dataflow = React.lazy(() => import('../containers/Dataflow'));
+const IEC62443 = React.lazy(() => import('../containers/IEC62443'));
+const IEC62443ComponentAssessment = React.lazy(() => import('../containers/IEC62443ComponentAssessment'));
+const VulnerabilityAssessment = React.lazy(() => import('../containers/VulnerabilityAssessment'));
 const AssumptionList = React.lazy(() => import('../containers/AssumptionList'));
 const MitigationList = React.lazy(() => import('../containers/MitigationList'));
 const MitigationPack = React.lazy(() => import('../containers/MitigationPack'));
@@ -90,6 +99,18 @@ const workspaceRoutes = [
     element: <ThreatModelReport />,
   },
   {
+    path: ROUTE_VIEW_THREAT_MODEL_EXECUTIVE_PATH,
+    element: <ThreatModelReport reportType='executive' />,
+  },
+  {
+    path: ROUTE_VIEW_THREAT_MODEL_OPERATIONAL_PATH,
+    element: <ThreatModelReport reportType='operational' />,
+  },
+  {
+    path: ROUTE_VIEW_THREAT_MODEL_INTERNAL_PATH,
+    element: <ThreatModelReport reportType='full' />,
+  },
+  {
     path: ROUTE_THREAT_PACK_PATH,
     element: <ThreatPack />,
   },
@@ -116,6 +137,18 @@ const workspaceRoutes = [
   {
     path: ROUTE_BRAINSTORM_PATH,
     element: <BrainstormBoard />,
+  },
+  {
+    path: ROUTE_IEC62443_PATH,
+    element: <IEC62443 />,
+  },
+  {
+    path: ROUTE_IEC62443_4_2_PATH,
+    element: <IEC62443ComponentAssessment />,
+  },
+  {
+    path: ROUTE_VULNERABILITY_ASSESSMENT_PATH,
+    element: <VulnerabilityAssessment />,
   },
 ];
 

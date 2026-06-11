@@ -39,3 +39,5 @@ export const LOCAL_STORAGE_KEY_THEME_MODE = 'ThreatComposer.theme.mode';
 export const LOCAL_STORAGE_KEY_THEME_DENSITY = 'ThreatComposer.theme.density';
 
 export const LOCAL_STORAGE_KEY_BRAINSTORM_DATA = 'ThreatStatementGenerator.BrainstormData';
+
+export const LOCAL_STORAGE_KEY_IEC62443_ANALYSIS = 'ThreatStatementGenerator.IEC62443Analysis';

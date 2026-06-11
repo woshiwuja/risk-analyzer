@@ -26,6 +26,7 @@ export interface ThreatModelProps extends ViewNavigationEvent {
   onPrintButtonClick?: (data: DataExchangeFormat) => void;
   isPreview?: boolean;
   convertToDocx?: ThreatModelViewProps['convertToDocx'];
+  reportType?: ThreatModelViewProps['reportType'];
 }
 
 const ThreatModel: FC<ThreatModelProps> = ({

@@ -1,0 +1,16 @@
+.git
+.gitignore
+node_modules
+**/node_modules
+**/build
+**/dist
+**/coverage
+**/test-reports
+**/.env
+docker-compose.yml
+Dockerfile
+*.pdf
+docs
+packages/threat-composer/lib
+packages/threat-composer/storybook.out
+**/tsconfig.tsbuildinfo

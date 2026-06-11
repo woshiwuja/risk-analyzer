@@ -22,10 +22,11 @@ import { useAssumptionsContext } from '../../contexts/AssumptionsContext/context
 import { useBrainstormContext } from '../../contexts/BrainstormContext/context';
 import { useDataflowInfoContext } from '../../contexts/DataflowContext/context';
 import { useGlobalSetupContext } from '../../contexts/GlobalSetupContext/context';
+import { useIEC62443Context } from '../../contexts/IEC62443Context/context';
 import { useMitigationLinksContext } from '../../contexts/MitigationLinksContext/context';
 import { useMitigationsContext } from '../../contexts/MitigationsContext/context';
 import { useThreatsContext } from '../../contexts/ThreatsContext/context';
-import { DataExchangeFormat, TemplateThreatStatement } from '../../customTypes';
+import { DataExchangeFormat, TemplateThreatStatement, hasIEC62443Content } from '../../customTypes';
 import cleanupThreatData from '../../utils/cleanupThreatData';
 import { downloadObjectAsJson } from '../../utils/downloadContent';
 import getExportFileName from '../../utils/getExportFileName';
@@ -56,6 +57,7 @@ const useImportExport = () => {
   const { assumptionLinkList, setAssumptionLinkList } = useAssumptionLinksContext();
   const { mitigationLinkList, setMitigationLinkList } = useMitigationLinksContext();
   const { brainstormData, setBrainstormData } = useBrainstormContext();
+  const { iec62443Analysis, setIEC62443Analysis } = useIEC62443Context();
 
   // Helper function to check if brainstorm data is empty
   const isBrainstormDataEmpty = useCallback((data: typeof brainstormData) => {
@@ -84,6 +86,7 @@ const useImportExport = () => {
         assumptionLinks: assumptionLinkList,
         mitigationLinks: mitigationLinkList,
         threats: cleanedThreats,
+        ...(hasIEC62443Content(iec62443Analysis) ? { iec62443Analysis } : {}),
       };
 
       // Only include brainstormData if it's not empty
@@ -105,7 +108,7 @@ const useImportExport = () => {
     architectureInfo, dataflowInfo,
     assumptionList, mitigationList,
     assumptionLinkList, mitigationLinkList,
-    statementList, brainstormData, isBrainstormDataEmpty]);
+    statementList, brainstormData, isBrainstormDataEmpty, iec62443Analysis]);
 
   const exportAll = useCallback(() => {
     const exportFileName = getExportFileName(composerMode, false, currentWorkspace);
@@ -170,6 +173,7 @@ const useImportExport = () => {
         assets: [],
         mitigations: [],
       });
+      setIEC62443Analysis(data.iec62443Analysis || { findings: [] });
     } else {
       // Support ListOnly mode
       setStatementList(data.threats || []);
@@ -183,6 +187,7 @@ const useImportExport = () => {
     setStatementList,
     setAssumptionLinkList,
     setMitigationLinkList,
+    setIEC62443Analysis,
   ]);
 
   return {

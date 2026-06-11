@@ -1,54 +1,39 @@
-FROM public.ecr.aws/amazonlinux/amazonlinux:latest as build
+# Stage 1: build the static website
+FROM public.ecr.aws/docker/library/node:20 AS build
 
-RUN dnf install tar gzip python3 gcc-c++ make python3-pip rsync shadow-utils -y
+# Trust corporate TLS-inspection CAs (e.g. Zscaler) so yarn/node work behind such proxies
+COPY docker/certs/ /usr/local/share/ca-certificates/
+RUN update-ca-certificates
+ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 20
-
-# Use bash for the shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# Create a script file sourced by both interactive and non-interactive bash shells
-ENV BASH_ENV /tmp/bash_env
-RUN mkdir /usr/local/nvm
-RUN touch "${BASH_ENV}"
-RUN echo '. "${BASH_ENV}"' >> ~/.bashrc
-
-# Download and install nvm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | PROFILE="${BASH_ENV}" bash
-RUN echo node > .nvmrc
-RUN nvm install $NODE_VERSION
-
-# Required to build the threat-composer app
-RUN npm install -g @aws/pdk yarn
-
-# Create a non-root user named 'app' and set up home directory
-RUN useradd -m app
-
-
-# # Create an app directory and change its ownership to the 'app' user
-RUN mkdir /app && chown app:app /app
-
-# # Switch to the 'app' user
-USER app
-# Set the path so we can use pdk
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
-
-# # Set the working directory to the app directory
 WORKDIR /app
 
-# #Copy files into the Docker image
-COPY --chown=app:app . .
-RUN ./scripts/build.sh
+# Install dependencies first to leverage docker layer caching
+COPY package.json yarn.lock ./
+COPY packages/threat-composer/package.json packages/threat-composer/
+COPY packages/threat-composer-app/package.json packages/threat-composer-app/
+COPY packages/threat-composer-app-browser-extension/package.json packages/threat-composer-app-browser-extension/
+COPY packages/threat-composer-infra/package.json packages/threat-composer-infra/
+RUN yarn install --frozen-lockfile --ignore-engines --ignore-scripts
 
-# # Stage 2: Serve the application using Nginx
-FROM nginx:alpine
-# Remove the default nginx website
-RUN rm -rf /usr/share/nginx/html/*
-# # Copy the build output to the nginx html directory
-COPY --from=build /app/packages/threat-composer-app/build/website/ /usr/share/nginx/html
-# # Expose port 80
-EXPOSE 80
-# # Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+COPY . .
+
+# Build the threat-composer library (tsc + static assets used by the app)
+RUN cd packages/threat-composer \
+    && npx tsc --build \
+    && cd src \
+    && find . \( -name '*.css' -o -name '*.png' -o -name '*.gif' \) -exec cp --parents {} ../lib/ \;
+
+# Build the static website
+RUN cd packages/threat-composer-app \
+    && NODE_OPTIONS=--max-old-space-size=8192 GENERATE_SOURCEMAP=false BUILD_PATH=./build/website/ npx craco build
+
+# Stage 2: serve the static build with python http.server (with SPA fallback to index.html)
+FROM public.ecr.aws/docker/library/python:3.12-slim
+
+WORKDIR /site
+COPY --from=build /app/packages/threat-composer-app/build/website/ /site/
+COPY docker/serve.py /serve.py
+
+EXPOSE 3000
+CMD ["python", "/serve.py"]

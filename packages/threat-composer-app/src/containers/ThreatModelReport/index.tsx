@@ -13,7 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  ******************************************************************************************************************** */
-import { ThreatModel } from '@aws/threat-composer';
+import { ThreatModel, ReportType } from '@aws/threat-composer';
 import { FC } from 'react';
 import {
   ROUTE_APPLICATION_INFO,
@@ -27,12 +27,18 @@ import useNavigateView from '../../hooks/useNavigationView';
 import useOnPreview from '../../hooks/useOnPreview';
 import convertToDocx from '../../utils/convertToDocx';
 
-const ThreatModelReport: FC = () => {
+export interface ThreatModelReportProps {
+  reportType?: ReportType;
+}
+
+const ThreatModelReport: FC<ThreatModelReportProps> = ({ reportType = 'full' }) => {
   const handleNavigationView = useNavigateView();
-  const [onPreview] = useOnPreview();
+  const [onPreview] = useOnPreview(reportType);
 
   return (<ThreatModel
-    convertToDocx={convertToDocx}
+    // il docx export genera sempre il report completo: lo offriamo solo nella vista completa
+    convertToDocx={reportType === 'full' ? convertToDocx : undefined}
+    reportType={reportType}
     onPrintButtonClick={onPreview}
     onApplicationInfoView={() => handleNavigationView(ROUTE_APPLICATION_INFO)}
     onArchitectureView={() => handleNavigationView(ROUTE_ARCHITECTURE_INFO)}

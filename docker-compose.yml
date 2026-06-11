@@ -1,0 +1,32 @@
+services:
+  # Webapp statica: builda il sito dentro l'immagine e lo serve con python -m http.server.
+  # Uso: docker compose up -d --build
+  threat-composer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: risk-analyzer
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:3000/')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Build completa ufficiale (pdk install + build + eslint) dentro un container node:20,
+  # con il repo montato: gli artefatti (lib/, build/) restano sul filesystem host.
+  # Uso: docker compose --profile build run --rm builder
+  builder:
+    profiles: ["build"]
+    build:
+      context: .
+      dockerfile: docker/builder.Dockerfile
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    environment:
+      HOME: /tmp
+      NODE_OPTIONS: --max-old-space-size=8192
+    volumes:
+      - .:/app
+    working_dir: /app

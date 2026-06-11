@@ -27,7 +27,7 @@ import StatusIndicator from '@cloudscape-design/components/status-indicator';
 import * as awsui from '@cloudscape-design/design-tokens';
 import { css } from '@emotion/react';
 import { FC, useEffect, useCallback, useState, ReactNode, PropsWithChildren, useMemo } from 'react';
-import { DataExchangeFormat, HasContentDetails, ViewNavigationEvent } from '../../../../../customTypes';
+import { DataExchangeFormat, HasContentDetails, ReportType, ViewNavigationEvent } from '../../../../../customTypes';
 import printStyles from '../../../../../styles/print';
 import convertToMarkdown from '../../../../../utils/convertToMarkdown';
 import convertToYaml from '../../../../../utils/convertToYaml';
@@ -87,6 +87,7 @@ export interface ThreatModelViewProps extends ViewNavigationEvent {
   onPrintButtonClick?: () => void;
   hasContentDetails?: HasContentDetails;
   convertToDocx?: (data: DataExchangeFormat) => Promise<Blob>;
+  reportType?: ReportType;
 }
 
 const ThreatModelView: FC<ThreatModelViewProps> = ({
@@ -98,6 +99,7 @@ const ThreatModelView: FC<ThreatModelViewProps> = ({
   onPrintButtonClick,
   hasContentDetails,
   convertToDocx,
+  reportType = 'full',
   ...props
 }) => {
   const [content, setContent] = useState('');
@@ -106,13 +108,13 @@ const ThreatModelView: FC<ThreatModelViewProps> = ({
   useEffect(() => {
     const updateContent = async () => {
       setLoading(true);
-      const processedContent = await convertToMarkdown(data, composerMode);
+      const processedContent = await convertToMarkdown(data, composerMode, reportType);
       setContent(processedContent);
       setLoading(false);
     };
 
     updateContent().catch(err => console.log('Error', err));
-  }, [data, composerMode, hasContentDetails]);
+  }, [data, composerMode, hasContentDetails, reportType]);
 
   const handleCopyMarkdown = useCallback(async () => {
     await navigator.clipboard.writeText(content);

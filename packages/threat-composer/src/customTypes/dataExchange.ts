@@ -19,6 +19,7 @@ import { ArchitectureInfoSchema } from './architecture';
 import { AssumptionSchema, AssumptionLinkSchema } from './assumptions';
 import { BrainstormDataSchema } from './brainstorm';
 import { DataflowInfoSchema } from './dataflow';
+import { IEC62443AnalysisSchema } from './iec62443';
 import { MitigationSchema, MitigationLinkSchema } from './mitigations';
 import { TemplateThreatStatementSchema } from './threats';
 import { WorkspaceSchema, Workspace } from './workspaces';
@@ -36,6 +37,7 @@ export const DataExchangeFormatSchema = z.object({
   mitigationLinks: MitigationLinkSchema.array().optional().describe('Links between mitigations and threats'),
   threats: TemplateThreatStatementSchema.array().optional().describe('Threats for the application being threat modeled'),
   brainstorm: BrainstormDataSchema.optional().describe('Brainstorm data for this threat model. Including: assumptions, mitigitations, threat sources, threat prerequisites, threat actions, threat impacts, impacted goals, and impacted assets'),
+  iec62443Analysis: IEC62443AnalysisSchema.optional().describe('IEC 62443-3-2 risk assessment alignment findings for the application being threat modeled'),
 }).strict().describe('Threat Composer data exchange format schema for importing/exporting threat modeling data. This schema defines the complete structure for threat modeling sessions including application info, architecture diagrams, data flows, threats, mitigations, and assumptions. Files conforming to this schema should use the .tc.json file extension and can be imported/exported through the Threat Composer application. When generating or validating threat model data, ensure all optional fields are included when available (and additive) to provide comprehensive threat modeling coverage. For more information about Threat Composer and threat modeling best practices, visit: https://github.com/awslabs/threat-composer');
 
 export type DataExchangeFormat = z.infer<typeof DataExchangeFormatSchema>;

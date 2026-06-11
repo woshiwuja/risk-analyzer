@@ -16,6 +16,9 @@
 export { default as ThreatStatementEditor } from './threats/ThreatStatementEditor';
 export { default as ThreatStatementList } from './threats/ThreatStatementList';
 export { default as ApplicationInfoComponent } from './application/ApplicationInfo';
+export { default as IEC62443AnalysisComponent } from './iec62443/IEC62443Analysis';
+export { default as IEC62443ComponentAssessmentComponent } from './iec62443/IEC62443ComponentAssessment';
+export { default as VulnerabilityAssessmentComponent } from './iec62443/VulnerabilityAssessment';
 export { default as ArchitectureInfoComponent } from './architecture/ArchitectureInfo';
 export { default as DataflowInfoComponent } from './dataflow/DataflowInfo';
 export { default as AssumptionList } from './assumptions/AssumptionList';

@@ -24,6 +24,7 @@ import BrainstormContextProvider from '../BrainstormContext';
 import CrossWorkspaceContextProvider from '../CrossWorkspaceContext';
 import DataflowInfoContextProvider from '../DataflowContext';
 import GlobalSetupContextProvider from '../GlobalSetupContext';
+import IEC62443ContextProvider from '../IEC62443Context';
 import MitigationLinksContextProvider from '../MitigationLinksContext';
 import MitigationPacksContextProvider from '../MitigationPacksContext';
 import MitigationsContextProvider from '../MitigationsContext';
@@ -57,11 +58,13 @@ const WorkspaceContextInnerAggregator: FC<PropsWithChildren<WorkspaceContextAggr
                     <ThreatPacksContextProvider workspaceId={workspaceId}>
                       <MitigationPacksContextProvider workspaceId={workspaceId}>
                         <BrainstormContextProvider workspaceId={workspaceId}>
-                          <CrossWorkspaceContextProvider>
-                            <WindowExporter>
-                              {children}
-                            </WindowExporter>
-                          </CrossWorkspaceContextProvider>
+                          <IEC62443ContextProvider workspaceId={workspaceId}>
+                            <CrossWorkspaceContextProvider>
+                              <WindowExporter>
+                                {children}
+                              </WindowExporter>
+                            </CrossWorkspaceContextProvider>
+                          </IEC62443ContextProvider>
                         </BrainstormContextProvider>
                       </MitigationPacksContextProvider>
                     </ThreatPacksContextProvider>

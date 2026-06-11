@@ -42,4 +42,5 @@ export { default as ContextAggregator } from './ContextAggregator';
 export { default as WorkspaceExamplesContext } from './WorkspaceExamplesContext';
 export { default as BrainstormContextProvider } from './BrainstormContext';
 export { useBrainstormContext } from './BrainstormContext/context';
-export { PromotionHandlers, ThreatCreationHandlers } from './BrainstormContext';
+export { PromotionHandlers, ThreatCreationHandlers } from './BrainstormContext';export { default as IEC62443ContextProvider } from './IEC62443Context';
+export { useIEC62443Context } from './IEC62443Context/context';

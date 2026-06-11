@@ -37,10 +37,10 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-!isMemoryRouterUsed() && serviceWorkerRegistration.register();
+// Service worker disabled: with the precaching service worker enabled, browsers keep
+// serving a stale cached version of the app after each rebuild/redeploy.
+// unregister() also removes any previously installed service worker from clients.
+!isMemoryRouterUsed() && serviceWorkerRegistration.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

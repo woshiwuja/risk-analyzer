@@ -13,21 +13,26 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  ******************************************************************************************************************** */
+import SpaceBetween from '@cloudscape-design/components/space-between';
 import { FC } from 'react';
 import { useDataflowInfoContext } from '../../../contexts/DataflowContext/context';
 import { DataflowInfoSchema, EditableComponentBaseProps } from '../../../customTypes';
 import BaseDiagramInfo from '../../generic/BaseDiagramInfo';
+import ZonesConduits from '../../iec62443/ZonesConduits';
 
 const DataflowInfo: FC<EditableComponentBaseProps> = (props) => {
   const { dataflowInfo, setDataflowInfo } = useDataflowInfoContext();
-  return <BaseDiagramInfo
-    {...props}
-    headerTitle='Dataflow'
-    diagramTitle='Dataflow Diagram'
-    entity={dataflowInfo}
-    onConfirm={(diagram) => setDataflowInfo(diagram)}
-    validateData={DataflowInfoSchema.shape.description.safeParse}
-  />;
+  return (<SpaceBetween direction='vertical' size='l'>
+    <BaseDiagramInfo
+      {...props}
+      headerTitle='Dataflow'
+      diagramTitle='Dataflow Diagram'
+      entity={dataflowInfo}
+      onConfirm={(diagram) => setDataflowInfo(diagram)}
+      validateData={DataflowInfoSchema.shape.description.safeParse}
+    />
+    <ZonesConduits />
+  </SpaceBetween>);
 };
 
 export default DataflowInfo;

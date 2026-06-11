@@ -26,10 +26,16 @@ import {
   ROUTE_ASSUMPTION_LIST_PATH,
   ROUTE_BRAINSTORM_PATH,
   ROUTE_DATAFLOW_INFO_PATH,
+  ROUTE_IEC62443_PATH,
+  ROUTE_IEC62443_4_2_PATH,
+  ROUTE_VULNERABILITY_ASSESSMENT_PATH,
   ROUTE_THREAT_PACKS_PATH,
   ROUTE_MITIGATION_LIST_PATH,
   ROUTE_THREAT_LIST_PATH,
   ROUTE_VIEW_THREAT_MODEL_PATH,
+  ROUTE_VIEW_THREAT_MODEL_EXECUTIVE_PATH,
+  ROUTE_VIEW_THREAT_MODEL_OPERATIONAL_PATH,
+  ROUTE_VIEW_THREAT_MODEL_INTERNAL_PATH,
   ROUTE_WORKSPACE_HOME_PATH,
   ROUTE_MITIGATION_PACKS_PATH,
 } from '../../config/routes';
@@ -83,11 +89,48 @@ const AppLayout: FC<PropsWithChildren<{}>> = ({
         href: generateUrl(ROUTE_MITIGATION_LIST_PATH, searchParams, workspaceId),
         type: 'link',
       },
+      {
+        text: 'IEC 62443-3-2 risk analysis',
+        href: generateUrl(ROUTE_IEC62443_PATH, searchParams, workspaceId),
+        type: 'link',
+      },
+      {
+        text: 'IEC 62443-4-2 requirements',
+        href: generateUrl(ROUTE_IEC62443_4_2_PATH, searchParams, workspaceId),
+        type: 'link',
+      },
+      {
+        text: 'Vulnerability assessment',
+        href: generateUrl(ROUTE_VULNERABILITY_ASSESSMENT_PATH, searchParams, workspaceId),
+        type: 'link',
+      },
       { type: 'divider' },
       {
+        type: 'expandable-link-group',
         text: 'Threat model',
         href: generateUrl(ROUTE_VIEW_THREAT_MODEL_PATH, searchParams, workspaceId),
-        type: 'link',
+        items: [
+          {
+            text: 'Completo',
+            href: generateUrl(ROUTE_VIEW_THREAT_MODEL_PATH, searchParams, workspaceId),
+            type: 'link',
+          },
+          {
+            text: 'Executive',
+            href: generateUrl(ROUTE_VIEW_THREAT_MODEL_EXECUTIVE_PATH, searchParams, workspaceId),
+            type: 'link',
+          },
+          {
+            text: 'Operativo',
+            href: generateUrl(ROUTE_VIEW_THREAT_MODEL_OPERATIONAL_PATH, searchParams, workspaceId),
+            type: 'link',
+          },
+          {
+            text: 'Interno',
+            href: generateUrl(ROUTE_VIEW_THREAT_MODEL_INTERNAL_PATH, searchParams, workspaceId),
+            type: 'link',
+          },
+        ],
       },
       { type: 'divider' },
       {
